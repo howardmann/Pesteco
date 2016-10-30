@@ -1,2 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Users</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Client</th>
+    <th>Email</th>
+    <th>Mobile</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td>
+      <% if user.client %>
+        <%= link_to user.client.name, client_path(user.client) %>
+      <% end %>
+    </td>
+    <td><%= user.email %></td>
+    <td><%= user.mobile %></td>
+  </tr>
+  <% end %>
+</table>

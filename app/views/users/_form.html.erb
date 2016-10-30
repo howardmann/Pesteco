@@ -1,0 +1,28 @@
+<%= form_for([@client, @user]) do |f| %>
+  <fieldset>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, :autofocus => true, :required => true %>
+    </p>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :mobile %><br>
+      <%= f.text_field :mobile %>
+    </p>
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, :required => true %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, :required => true %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  </fieldset>
+
+<% end %>

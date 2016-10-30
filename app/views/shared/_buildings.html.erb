@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Reports</th>
+  </tr>
+  <% object.buildings.each do |building| %>
+  <tr>
+    <td><%= link_to building.name, building_path(building) %></td>
+    <td><%= building.address %></td>
+    <td><%= building.reports.length %></td>
+  </tr>
+  <% end %>
+</table>

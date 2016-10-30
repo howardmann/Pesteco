@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/logout' => 'session#destroy', :as => 'logout'
 
-  resources :users
   resources :clients do
     resources :buildings, only: [:new, :create]
+    resources :users, only: [:new, :create]
   end
 
   resources :buildings, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
