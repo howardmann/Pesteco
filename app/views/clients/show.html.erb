@@ -1,15 +1,21 @@
 <h1><%= @client.name %></h1>
-<p>Head office:
-  <%= @client.address %></p>
-  <p>
-    <%= link_to 'Edit Client', edit_client_path(@client) %> |
-    <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
-  </p>
+<p>Head office: <%= @client.address %></p>
+<p>
+  <%= link_to 'Edit Client', edit_client_path(@client) %> |
+  <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+</p>
 
 <hr>
 
 <h2>Buildings</h2>
 <%= render 'shared/buildings', object: @client %>
+
+<br>
+
+<button>
+  <%= link_to 'Add new building', new_client_building_path(@client) %>
+</button>
+
 
 <hr>
 

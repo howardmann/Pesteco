@@ -1,4 +1,4 @@
-<%= form_for(@client) do |f| %>
+<%= form_for([@client, @building]) do |f| %>
   <fieldset>
     <p>
       <%= f.label :name %><br>
@@ -7,6 +7,10 @@
     <p>
       <%= f.label :address %><br>
       <%= f.text_field :address, size: 60, :required => true %>
+    </p>
+    <p>
+      <%= f.label :reports %><br>
+      <em>Placeholder: upload pdfs</em>
     </p>
     <p>
       <%= f.submit %>

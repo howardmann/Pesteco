@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'clients#index'
+  root 'session#new'
 
   get '/login' => 'session#new', :as => 'login'
   post '/login' => 'session#create'

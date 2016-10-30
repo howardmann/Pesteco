@@ -1,2 +1,11 @@
-<h1>Buildings#show</h1>
-<p>Find me in app/views/buildings/show.html.erb</p>
+<h1><%= @building.name %></h1>
+<p>Address: <%= @building.address %></p>
+<p>
+  <%= link_to 'Edit Building', edit_building_path(@building) %> |
+  <%= link_to 'Delete Building', building_path(@building), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+</p>
+
+<hr>
+
+<h2>Reports:</h2>
+<p><em>Placeholder: cloudinary upload pdfs</em></p>
