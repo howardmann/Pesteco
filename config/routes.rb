@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+  get 'building/index'
+
+  get 'building/show'
+
+  get 'building/new'
+
+  get 'building/edit'
+
+  get 'client/index'
+
+  get 'client/show'
+
+  get 'client/new'
+
+  get 'client/edit'
+
+  get 'session/new'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
