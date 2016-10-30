@@ -1,0 +1,44 @@
+<h1><%= @client.name %></h1>
+<p>Head office:
+  <%= @client.address %></p>
+  <p>
+    <%= link_to 'Edit Client', edit_client_path(@client) %> |
+    <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+  </p>
+
+<hr>
+
+<h2>Buildings</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Reports</th>
+  </tr>
+  <% @client.buildings.each do |building| %>
+  <tr>
+    <td><%= link_to building.name, building_path(building) %></td>
+    <td><%= building.address %></td>
+    <td><%= building.reports.length %></td>
+  </tr>
+  <% end %>
+
+</table>
+<hr>
+
+<h2>Users</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+  </tr>
+  <% @client.users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= user.email %></td>
+    <td><%= user.mobile %></td>
+  </tr>
+  <% end %>
+
+</table>

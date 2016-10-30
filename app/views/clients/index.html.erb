@@ -1,0 +1,24 @@
+<h1>Clients</h1>
+
+<table>
+  <tr>
+    <th>Client</th>
+    <th>Venues</th>
+    <th>Contact</th>
+  </tr>
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= link_to client.name, client_path(client) %></td>
+    <td><%= client.buildings.length %></td>
+    <td>
+      <% client.users.each do |user| %>
+        <%= link_to user.name, user_path(user) %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br>
+<button>
+  <%= link_to 'Add new client', new_client_path %>
+</button>
