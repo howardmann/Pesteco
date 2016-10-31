@@ -12,7 +12,7 @@
   <% @building.reports.order('date DESC').each do |report|  %>
     <li>
       <%= report.date %> |
-      <a href="<%= report.pdf %>" target="_blank">Pesteco Report</a>
+      <a href="<%= cl_image_path(report.pdf) %>" target="_blank">Pesteco Report</a>
       <ul>
         <li>
           <%= link_to 'Edit', edit_report_path(:id => report, :building_id => @building) %> |
