@@ -123,6 +123,38 @@ puts "\nBUILDINGS........"
 p "Building count: #{Building.all.length}"
 p "Building names: #{Building.all.pluck(:name)}"
 
+# REPORTS ..........................................
+Report.destroy_all
+coogeeReport1 = Report.create(
+  :date => '20161031',
+  :pdf => 'http://www.pdf995.com/samples/pdf.pdf'
+)
+
+coogeeReport2 = Report.create(
+  :date => '20160915',
+  :pdf => 'https://www.antennahouse.com/XSLsample/pdf/sample-link_1.pdf'
+)
+
+wongReport1 = Report.create(
+  :date => '20160815',
+  :pdf => 'http://www.pdf995.com/samples/pdf.pdf'
+)
+
+wongReport2 = Report.create(
+  :date => '20160915',
+  :pdf => 'https://www.antennahouse.com/XSLsample/pdf/sample-link_1.pdf'
+)
+
+coogee.reports << coogeeReport1 << coogeeReport2
+wong.reports << wongReport1 << wongReport2
+
+# Reports tests
+puts "\nREPORTS........"
+p "Reports count: #{Report.all.length}"
+p "Coogee building reports: #{coogee.reports.pluck(:date)}"
+p "Wong building reports: #{wong.reports.pluck(:date)}"
+
+
 # ASSOCIATIONS
 merivale.buildings << coogee << wong << newport
 urban.buildings << sake << bavarian << fratelli

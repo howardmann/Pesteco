@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'reports/index'
+
+  get 'reports/show'
+
+  get 'reports/new'
+
+  get 'reports/edit'
+
   root 'session#new'
 
   get '/login' => 'session#new', :as => 'login'
@@ -10,9 +18,13 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
   end
 
-  resources :buildings, only: [:index, :show, :edit, :update, :destroy]
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
+  resources :buildings, only: [:index, :show, :edit, :update, :destroy] do
+    resources :reports, only: [:new, :create]
+  end
+
+  resources :reports, only: [:index, :show, :edit, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
