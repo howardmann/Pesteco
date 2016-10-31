@@ -13,4 +13,5 @@
 
 class Building < ActiveRecord::Base
   belongs_to :client
+  has_many :reports
 end
