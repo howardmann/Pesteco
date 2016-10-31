@@ -1,0 +1,15 @@
+<%= form_for([@building, @report]) do |f| %>
+  <fieldset>
+    <p>
+      <%= f.label 'Date of report' %><br>
+      <%= f.date_field :date, :autofocus => true, :required => true %>
+    </p>
+    <p>
+      <%= f.label 'pdf link [replace with Cloudinary upload]' %><br>
+      <%= f.text_field :pdf, size: 60, :required => true %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  </fieldset>
+<% end %>

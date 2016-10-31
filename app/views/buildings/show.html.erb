@@ -8,4 +8,14 @@
 <hr>
 
 <h2>Reports:</h2>
-<p><em>Placeholder: cloudinary upload pdfs</em></p>
+<ul>
+  <% @building.reports.order('date DESC').each do |report|  %>
+    <li><%= report.date %> | <a href="<%= report.pdf %>" target="_blank">Pesteco Report</a></li>
+  <% end %>
+</ul>
+
+<br>
+
+<button>
+  <%= link_to 'Add new report', new_building_report_path(@building) %>
+</button>
