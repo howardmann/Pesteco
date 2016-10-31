@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all.select{|user| !user.admin }
-  end
+  before_action :require_login
 
   def show
-    @user = User.find(params[:id])
+    user = User.find(params[:id])
+
+    if @current_user.admin || @current_user == user
+      @user = user
+    else
+      flash[:error] = "You do not have rights to access that user page"
+      redirect_to user_path(@current_user)
+    end
   end
 
   def new
@@ -46,5 +51,12 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :name, :mobile, :client_id)
+    end
+
+    def require_login
+      unless @current_user
+        flash[:error] = "You do not have rights to access this page"
+        redirect_to root_path
+      end
     end
 end

@@ -3,15 +3,15 @@
 <p>
   Company:
   <% if @user.client %>
-    <%= @user.client.name %>
+    <%= link_to @user.client.name, client_path(@user.client) %>
   <% end %>
 </p>
 <p>Email: <%= @user.email %></p>
 <p>Mobile: <%= @user.mobile %></p>
 
 <p>
-  <%= link_to 'Edit User', edit_user_path(@user) %> |
-  <%= link_to 'Remove User', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= link_to 'Edit Account', edit_user_path(@user) %> |
+  <%= link_to 'Delete Account', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
 </p>
 
 <hr>
