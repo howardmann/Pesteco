@@ -127,22 +127,22 @@ p "Building names: #{Building.all.pluck(:name)}"
 Report.destroy_all
 coogeeReport1 = Report.create(
   :date => '20161031',
-  :pdf => 'Pesteco/Building/Date'
+  :pdf => 'sample pesteco'
 )
 
 coogeeReport2 = Report.create(
   :date => '20160915',
-  :pdf => 'Pesteco/Building/Date'
+  :pdf => 'sample pesteco'
 )
 
 wongReport1 = Report.create(
   :date => '20160815',
-  :pdf => 'Pesteco/Building/Date'
+  :pdf => 'sample pesteco'
 )
 
 wongReport2 = Report.create(
   :date => '20160915',
-  :pdf => 'Pesteco/Building/Date'
+  :pdf => 'sample pesteco'
 )
 
 coogee.reports << coogeeReport1 << coogeeReport2

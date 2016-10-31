@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
     # First, check to see if the user has an attached an image/ pdf for uploading
     if params[:file]
       # Then call Cloudinary's upload method passing in the file as a paramater
-      title = "Pesteco/#{@building.name}/#{params[:report][:date]} #{@building.name} Pesteco"
+      title = "Pesteco/#{@building.name}/#{params[:report][:date]} Pesteco #{@building.name}"
       req = Cloudinary::Uploader.upload(params[:file], :public_id => title )
       # Using the public_id of the Cloudinary file allows us to use Cloudinary's powerful transformation methods
       @report.pdf = req['public_id']
@@ -43,7 +43,7 @@ class ReportsController < ApplicationController
 
   def update
     @report = Report.find(params[:id])
-    title = "Pesteco/#{@report.building.name}/#{@report.date} #{@report.building.name} Pesteco"
+    title = "Pesteco/#{@report.building.name}/#{@report.date} Pesteco #{@report.building.name}"
 
     # Similar to create, check if file has been uploaded and if so upload to pdf
     if params[:file]
