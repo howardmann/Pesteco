@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'reports/index'
-
-  get 'reports/show'
-
-  get 'reports/new'
-
-  get 'reports/edit'
-
   root 'session#new'
 
   get '/login' => 'session#new', :as => 'login'

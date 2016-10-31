@@ -10,7 +10,16 @@
 <h2>Reports:</h2>
 <ul>
   <% @building.reports.order('date DESC').each do |report|  %>
-    <li><%= report.date %> | <a href="<%= report.pdf %>" target="_blank">Pesteco Report</a></li>
+    <li>
+      <%= report.date %> |
+      <a href="<%= report.pdf %>" target="_blank">Pesteco Report</a>
+      <ul>
+        <li>
+          <%= link_to 'Edit', edit_report_path(:id => report, :building_id => @building) %> |
+          <%= link_to 'Delete', report_path(:id => report, :building_id => @building), method: :delete, :data => {confirm: 'Are you sure?'} %>
+        </li>
+      </ul>
+    </li>
   <% end %>
 </ul>
 

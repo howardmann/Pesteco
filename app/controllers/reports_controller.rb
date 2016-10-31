@@ -4,6 +4,7 @@ class ReportsController < ApplicationController
   end
 
   def show
+    @report = Report.find(params[:id])
   end
 
   def new
@@ -24,6 +25,24 @@ class ReportsController < ApplicationController
   end
 
   def edit
+    @report = Report.find(params[:id])
+  end
+
+  def update
+    @report = Report.find(params[:id])
+    @report.update(report_params)
+    if @report.save
+      redirect_to building_path(@report.building)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @building = Building.find(params[:building_id])
+    @report = Report.find(params[:id])
+    @report.destroy
+    redirect_to building_path(@building)
   end
 
   private
