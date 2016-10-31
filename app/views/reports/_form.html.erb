@@ -5,8 +5,8 @@
       <%= f.date_field :date, :autofocus => true, :required => true %>
     </p>
     <p>
-      <%= f.label 'pdf link [replace with Cloudinary upload]' %><br>
-      <%= f.text_field :pdf, size: 60, :required => true %>
+      <%= f.label 'PDF file upload' %><br>
+      <%= f.cl_image_upload :pdf, :required => true %>
     </p>
     <p>
       <%= f.submit %>
