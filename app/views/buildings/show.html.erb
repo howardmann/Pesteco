@@ -11,21 +11,18 @@
 
 <hr>
 
-<h2>Reports:</h2>
-<ul>
-  <% @building.reports.order('date DESC').each do |report|  %>
-    <li>
-      <%= report.date %> |
-      <a href="<%= cl_image_path(report.pdf) %>" target="_blank">Pesteco Report</a>
-      <ul>
-        <li>
-          <%= link_to 'Edit', edit_report_path(:id => report, :building_id => @building) %> |
-          <%= link_to 'Delete', report_path(:id => report, :building_id => @building), method: :delete, :data => {confirm: 'Are you sure?'} %>
-        </li>
-      </ul>
-    </li>
-  <% end %>
-</ul>
+<h2>Reports</h2>
+
+<% @building.reports.order('date DESC').each do |report|  %>
+  <p>
+    <a href="<%= cl_image_path(report.pdf) %>" target="_blank"><%= report.date.strftime('%a, %d %B %Y') %></a>
+    <% if @current_user && @current_user.admin %>
+      | <%= link_to 'Edit', edit_report_path(:id => report, :building_id => @building) %>
+      | <%= link_to 'Delete', report_path(:id => report, :building_id => @building), method: :delete, :data => {confirm: 'Are you sure?'} %>
+    <% end %>
+  </p>
+
+<% end %>
 
 <br>
 

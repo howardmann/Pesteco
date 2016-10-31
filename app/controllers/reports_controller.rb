@@ -1,11 +1,6 @@
 class ReportsController < ApplicationController
-  def index
-    @reports = Report.all
-  end
-
-  def show
-    @report = Report.find(params[:id])
-  end
+  # Only admin has access to reports. Users only click on cloudinary links
+  before_action :require_admin
 
   def new
     @building = Building.find(params[:building_id])
@@ -73,5 +68,12 @@ class ReportsController < ApplicationController
   private
     def report_params
       params.require(:report).permit(:date, :pdf, :building_id)
+    end
+
+    def require_admin
+      unless @current_user && @current_user.admin
+        flash[:error] = "You do not have rights to access this page"
+        redirect_to root_path
+      end
     end
 end

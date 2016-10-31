@@ -12,4 +12,6 @@
 
 class Report < ActiveRecord::Base
   belongs_to :building
+  validates :pdf, presence: true
+  validates :date, presence: true
 end
