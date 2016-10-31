@@ -1,9 +1,13 @@
 <h1><%= @building.name %></h1>
+<p>Owner: <%= link_to @building.client.name, client_path(@building.client) %></p>
 <p>Address: <%= @building.address %></p>
-<p>
-  <%= link_to 'Edit Building', edit_building_path(@building) %> |
-  <%= link_to 'Delete Building', building_path(@building), :method => :delete, :data => {confirm: 'Are you sure?'} %>
-</p>
+
+<% if @current_user && @current_user.admin %>
+  <p>
+    <%= link_to 'Edit Building', edit_building_path(@building) %> |
+    <%= link_to 'Delete Building', building_path(@building), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+  </p>
+<% end %>
 
 <hr>
 
@@ -25,6 +29,8 @@
 
 <br>
 
-<button>
-  <%= link_to 'Add new report', new_building_report_path(@building) %>
-</button>
+<% if @current_user && @current_user.admin %>
+  <button>
+    <%= link_to 'Add new report', new_building_report_path(@building) %>
+  </button>
+<% end %>

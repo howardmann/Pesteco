@@ -32,7 +32,13 @@
   </tr>
   <% @client.users.each do |user| %>
   <tr>
-    <td><%= link_to user.name, user_path(user) %></td>
+    <td>
+      <% if @current_user == user || @current_user.admin%>
+        <%= link_to user.name, user_path(user) %>
+      <% else %>
+        <%= user.name  %>
+      <% end %>
+    </td>
     <td><%= user.email %></td>
     <td><%= user.mobile %></td>
   </tr>
