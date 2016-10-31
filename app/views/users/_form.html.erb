@@ -1,15 +1,16 @@
 <%= form_for([@client, @user]) do |f| %>
   <fieldset>
+    <%= render "shared/errors", object: @user %>
     <p>
       <%= f.label :email %><br>
       <%= f.email_field :email, :autofocus => true, :required => true %>
     </p>
     <p>
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => true %>
     </p>
     <p>
-      <%= f.label :mobile %><br>
+      <%= f.label 'Mobile number (optional)' %><br>
       <%= f.text_field :mobile %>
     </p>
     <p>

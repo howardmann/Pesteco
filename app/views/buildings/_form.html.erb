@@ -1,5 +1,6 @@
 <%= form_for([@client, @building]) do |f| %>
   <fieldset>
+    <%= render "shared/errors", object: @building %>
     <p>
       <%= f.label :name %><br>
       <%= f.text_field :name, :autofocus => true, :required => true %>

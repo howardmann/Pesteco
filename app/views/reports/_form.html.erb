@@ -1,5 +1,6 @@
 <%= form_for([@building, @report], :html => {:multipart => true}) do |f| %>
   <fieldset>
+    <%= render "shared/errors", object: @report %>
     <p>
       <%= f.label 'Date of report' %><br>
       <%= f.date_field :date, :value => Date.today, :autofocus => true, :required => true %>

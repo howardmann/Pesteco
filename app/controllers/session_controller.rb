@@ -7,7 +7,11 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Succesful login, welcome back"
-      redirect_to user_path(user)
+      if user.admin
+        redirect_to clients_path
+      else
+        redirect_to client_path(user.client)
+      end
     else
       flash.now[:error] = "Incorrect email or password"
       render :new

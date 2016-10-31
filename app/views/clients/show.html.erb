@@ -1,9 +1,12 @@
 <h1><%= @client.name %></h1>
 <p>Head office: <%= @client.address %></p>
-<p>
-  <%= link_to 'Edit Client', edit_client_path(@client) %> |
-  <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
-</p>
+
+<% if @current_user && @current_user.admin %>
+  <p>
+    <%= link_to 'Edit Client', edit_client_path(@client) %> |
+    <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+  </p>
+<% end %>
 
 <hr>
 
@@ -12,14 +15,15 @@
 
 <br>
 
-<button>
-  <%= link_to 'Add new building', new_client_building_path(@client) %>
-</button>
-
+<% if @current_user && @current_user.admin %>
+  <button>
+    <%= link_to 'Add new building', new_client_building_path(@client) %>
+  </button>
+<% end %>
 
 <hr>
 
-<h2>Users</h2>
+<h2>Authorized users</h2>
 <table>
   <tr>
     <th>Name</th>

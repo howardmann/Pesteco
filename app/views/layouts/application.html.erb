@@ -14,13 +14,22 @@
 <header>
   <h1><%= link_to 'PESTECO', root_path %></h1>
   <nav>
-    <%= link_to 'Clients', clients_path %> |
-    <%= link_to 'Users', users_path %>
-    <br>
-    <%= link_to 'Login', login_path %> |
-    <%= link_to 'Logout', logout_path, method: :delete %>
+    <!-- Login if not signed in, and logout otherwise -->
+    <% unless @current_user%>
+      <%= link_to 'Login', login_path %>
+    <% else %>
+    <!-- Show admin link if current_user.admin, otherwise show user client path -->
+      <% if @current_user.admin %>
+        <%= link_to 'Admin', clients_path %> |
+      <% else %>
+        <%= link_to @current_user.name, client_path(@current_user.client) %> |
+      <% end %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+    <% end %>
   </nav>
 </header>
+
+<hr>
 
 <!-- FLASH message -->
 <% if flash[:success] %>
@@ -30,8 +39,6 @@
   <p><%= flash[:error] %></p>
 <% end %>
 
-
-<hr>
 <%= yield %>
 
 </body>

@@ -17,6 +17,7 @@ class BuildingsController < ApplicationController
     @building = Building.create(building_params)
     @client.buildings << @building
     if @building.save
+      flash[:success] = "Building succesfully created"
       redirect_to client_path(@client)
     else
       render :new
@@ -31,6 +32,7 @@ class BuildingsController < ApplicationController
     @building = Building.find(params[:id])
     @building.update(building_params)
     if @building.save
+      flash[:success] = "Building succesfully updated"
       redirect_to building_path(@building)
     else
       render :edit
@@ -40,6 +42,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building = Building.find(params[:id])
     @building.destroy
+    flash[:success] = "Building removed"
     redirect_to root_path
   end
 
