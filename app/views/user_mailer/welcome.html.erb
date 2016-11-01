@@ -1,2 +1,3 @@
-<h1>Thank you for signing up, <%= @user.name %></h1>
+<h2>Thank you for signing up, <%= @user.name %></h2>
 <p>You are now authorized to access your <%= @user.client.name %> Pesteco reports.</p>
+<p>Click <%= link_to 'here', root_path %> to sign in.</p>

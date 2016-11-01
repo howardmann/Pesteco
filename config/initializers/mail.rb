@@ -1,4 +1,4 @@
-ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.raise_delivery_errors = false
 
 ActionMailer::Base.smtp_settings = {
   :user_name => Rails.application.secrets.sendgrid_username,
