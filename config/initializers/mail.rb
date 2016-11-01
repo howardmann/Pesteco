@@ -3,7 +3,7 @@ ActionMailer::Base.raise_delivery_errors = false
 ActionMailer::Base.smtp_settings = {
   :user_name => Rails.application.secrets.sendgrid_username,
   :password => Rails.application.secrets.sendgrid_password,
-  :domain => ENV["RAILS_ENV"] == "development" ? "localhost" : "heroku.com",
+  :domain => ENV["RAILS_ENV"] == "development" ? "localhost" : "pesteco.herokuapp.com",
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
