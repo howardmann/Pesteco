@@ -1,4 +1,4 @@
-<h1>Password reset</h1>
+<h1>Set new password</h1>
 
 <!-- We must state the url so the form is not posted to the UsersController instead it is sent to the PasswordResetController's update action passing the reset token as the id-->
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>

@@ -1,5 +1,11 @@
-Thank you for signing up, <%= @user.name %>
+Welcome to Pesteco dashboard
 
-You are now authorized to access your <%= @user.client.name %> Pesteco reports
+<%= @user.name %>,
+You have been authorized to access <%= @user.client.name %>'s Pesteco reports.
 
-Click <%= link_to 'here', root_url %> to sign in.
+<%= link_to 'Click here to set your new password', edit_password_reset_url(@user.password_reset_token) %>
+
+Kind regards,
+
+Pesteco
+Bogdan Kolev

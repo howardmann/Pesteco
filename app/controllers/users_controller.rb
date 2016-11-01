@@ -19,11 +19,18 @@ class UsersController < ApplicationController
 
   def create
     @client = Client.find(params[:client_id])
-    @user = User.create(user_params)
+
+    @user = User.new(user_params)
+    token = SecureRandom.urlsafe_base64(8)
+    @user.password = token
+    @user.password_confirmation = token
+
     @client.users << @user
+
     if @user.save
       # Action Mailer to send email upon sign up
-      UserMailer.welcome(@user).deliver_now
+      @user.send_password_welcome
+      flash[:success] = "New user added to #{@client.name}"
       redirect_to client_path(@client)
     else
       render :new

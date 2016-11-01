@@ -22,7 +22,7 @@ class PasswordResetsController < ApplicationController
 
     # If token is expired send back to reset page, otherwise attempt to update user, if error then renreder edit password page
     if @user.password_reset_sent_at < 2.hours.ago
-      flash[:error] = "Password reset token has expired"
+      flash[:error] = "New password token has expired"
       redirect_to new_password_reset_path
     else
       @user.update_attributes(user_params)

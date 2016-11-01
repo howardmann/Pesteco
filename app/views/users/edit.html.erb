@@ -1,2 +1,32 @@
 <h1>Edit <%= @user.name %></h1>
-<%= render :partial => 'form' %>
+
+<%= form_for([@client, @user]) do |f| %>
+  <fieldset>
+    <%= render "shared/errors", object: @user %>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, :autofocus => true, :required => true %>
+    </p>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :required => true %>
+    </p>
+    <p>
+      <%= f.label 'Mobile number (optional)' %><br>
+      <%= f.text_field :mobile %>
+    </p>
+    <p>
+      <%= f.label 'Reset password' %><br>
+      <%= f.password_field :name %>
+    </p>
+    <p>
+      <%= f.label 'Confirm password' %><br>
+      <%= f.password_field :name %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  </fieldset>
+
+<% end %>

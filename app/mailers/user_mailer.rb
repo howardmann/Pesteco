@@ -3,12 +3,12 @@ class UserMailer < ApplicationMailer
 
   def welcome(user)
     @user = user
-    mail( :to => @user.email, :subject => 'Welcome to Pesteco dashboard', :cc => 'howardmann27@gmail.com' )
+    mail( :to => @user.email, :subject => 'Pesteco welcome', :cc => 'howardmann27@gmail.com' )
   end
 
   def password_reset(user)
     @user = user
-    mail( :to => @user.email, :subject => "Pesteco dashboard password reset")
+    mail( :to => @user.email, :subject => "Pesteco password reset")
   end
 
 end
