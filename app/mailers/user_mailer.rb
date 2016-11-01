@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: "howardmann27@gmail.com"
+  default from: "donotreply@pesteco.com"
 
   def welcome(user)
     @user = user
-    mail( :to => @user.email, :subject => 'Welcome to Pesteco dashboard' )
+    mail( :to => @user.email, :subject => 'Welcome to Pesteco dashboard', :cc => 'howardmann27@gmail.com' )
   end
 
 end
