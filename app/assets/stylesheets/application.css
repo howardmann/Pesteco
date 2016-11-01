@@ -21,3 +21,7 @@ body {
 #logo img{
   height: 50px;
 }
+
+#signature img {
+  max-width: 80%;
+}
