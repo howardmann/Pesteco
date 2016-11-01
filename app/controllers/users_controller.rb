@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @client.users << @user
     if @user.save
+      # Action Mailer to send email upon sign up
+      UserMailer.welcome(@user).deliver_now
       redirect_to client_path(@client)
     else
       render :new
