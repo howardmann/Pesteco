@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+
+  get 'password_resets/new'
+
   root 'session#new'
 
   get '/login' => 'session#new', :as => 'login'
   post '/login' => 'session#create'
   delete '/logout' => 'session#destroy', :as => 'logout'
+
+  resources :password_resets
 
   resources :clients do
     resources :buildings, only: [:new, :create]

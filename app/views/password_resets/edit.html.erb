@@ -1,0 +1,19 @@
+<h1>Password reset</h1>
+
+<!-- We must state the url so the form is not posted to the UsersController instead it is sent to the PasswordResetController's update action passing the reset token as the id-->
+<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+  <fieldset>
+    <%= render "shared/errors", object: @user %>
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, :required => true %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, :required => true %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  </fieldset>
+<% end %>
