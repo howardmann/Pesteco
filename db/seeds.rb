@@ -240,7 +240,7 @@ newsDog = Post.create(
 newsWin = Post.create(
   :title => 'Contract win',
   :date => '20161101',
-  :body => "Pesteco is pleased to announce a major contract win with Urban Purveyor Group, the largest restaurant group in Australia. As the most highly certified pest management company in Australia, Pesteco is committed to delivering outstanding quality and service to its clients. Pesteco CEO, Bogdan Kolev stated 'This is a significant win for Pesteco and reinforces the quality and standard we strive for'.",
+  :body => "Pesteco is pleased to announce a major contract win with Urban Purveyor Group, the largest restaurant group in Australia. As the most highly certified pest management company in Australia, Pesteco is committed to delivering outstanding quality and service to its clients. Pesteco CEO, Bogdan Kolev stated 'This is a significant win for Pesteco and reinforces the quality and standard we constantly deliver'.",
   :category => 'News',
   :attachments => ['Pesteco/urban']
 )

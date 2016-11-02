@@ -1,6 +1,6 @@
 <h1>Edit <%= @user.name %></h1>
 
-<%= form_for([@client, @user]) do |f| %>
+<%= form_for(@user) do |f| %>
   <fieldset>
     <%= render "shared/errors", object: @user %>
     <p>
@@ -17,11 +17,11 @@
     </p>
     <p>
       <%= f.label 'Reset password' %><br>
-      <%= f.password_field :name, :required => true %>
+      <%= f.password_field :password %>
     </p>
     <p>
       <%= f.label 'Confirm password' %><br>
-      <%= f.password_field :name, :required => true %>
+      <%= f.password_field :password_confirmation %>
     </p>
 
     <p>

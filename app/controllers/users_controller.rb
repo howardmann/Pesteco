@@ -45,6 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
+      flash[:success] = 'User successfully updated'
       redirect_to user_path(@user)
     else
       render :edit
@@ -63,7 +64,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :name, :mobile, :client_id)
+      params.require(:user).permit(:email, :name, :mobile, :password, :password_confirmation, :client_id)
     end
 
     def require_login

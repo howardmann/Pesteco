@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
   end
 
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   resources :buildings, only: [:show, :edit, :update, :destroy] do
     resources :reports, only: [:new, :create]
