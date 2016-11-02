@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+<h3>Supporting attachments</h3>
+
+<% @post.attachments.each do |attachment| %>
+  <%= link_to (cl_image_tag("#{attachment}.jpg", :width => 150, :height => 200, :crop => :fill, :page => 1)), cl_image_path(attachment), :target => "_blank" %>
+<% end %>
+
+<% if @current_user && @current_user.admin %>
+  <p><%= link_to 'Edit Post', edit_post_path(@post) %></p>
+  <p><%= link_to 'Remove Post attachments', post_remove_attachments_path(@post) %></p>
+  <p><%= link_to 'Delete Post', post_path(@post), method: :delete, :data => {confirm: 'Are you sure?'} %></p>
+<% end %>

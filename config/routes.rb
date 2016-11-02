@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  root 'pages#about'
 
   get 'about' => 'pages#about', :as => 'about'
+  get 'services' => 'pages#services', :as => 'services'
   get 'contact' => 'pages#contact', :as => 'contact'
-  get 'blog' => 'pages#blog', :as => 'blog'
+  get 'certification' => 'pages#certification', :as => 'certification'
+  get 'insurance' => 'pages#insurance', :as => 'insurance'
+  get 'news' => 'pages#news', :as => 'news'
 
   get 'password_resets/new'
-
-  root 'session#new'
 
   get '/login' => 'session#new', :as => 'login'
   post '/login' => 'session#create'
@@ -26,6 +28,10 @@ Rails.application.routes.draw do
   end
 
   resources :reports, only: [:show, :edit, :update, :destroy]
+
+  resources :posts
+
+  get 'posts/:id/remove_attachments' => 'posts#remove_attachments', :as => 'post_remove_attachments'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

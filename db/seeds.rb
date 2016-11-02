@@ -178,3 +178,77 @@ puts "Harris users: #{harris.users.all.pluck(:name)}"
 puts "\nMichael's buildings: #{michael.buildings.all.pluck(:name)}"
 puts "Vader's buildings: #{vader.buildings.all.pluck(:name)}"
 puts "Sam's buildings: #{sam.buildings.all.pluck(:name)}"
+
+# POSTS ..........................................
+Post.destroy_all
+insuranceProperty = Post.create(
+  :title => 'Property insurance',
+  :date => '20161010',
+  :body => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tempore tempora suscipit ratione doloremque dolores ullam, optio sint aut error, illum, nemo, porro? Illo placeat maiores debitis assumenda, eum provident.',
+  :category => 'Insurance',
+  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+)
+
+insuranceWorkers = Post.create(
+  :title => 'Workers insurance',
+  :date => '20161009',
+  :body => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tempore tempora suscipit ratione doloremque dolores ullam, optio sint aut error, illum, nemo, porro? Illo placeat maiores debitis assumenda, eum provident.',
+  :category => 'Insurance',
+  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+)
+
+certificationQuality = Post.create(
+  :title => 'IS O9001: Quality Management System',
+  :date => '20160712',
+  :body => 'Pesteco have Quality Management Plan aligned with ISO 9001:2015 and are certified at the highest industry standard. A copy of our certification has been supplied below and our detailed management plan can be supplied upon request. With quality at the core of everything Pesteco do, our clients will be guaranteed exceptional service and reliability.',
+  :category => 'Certification',
+  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+)
+
+certificationEnvironment = Post.create(
+  :title => 'ISO 14001: Environmental Management System',
+  :date => '20160712',
+  :body => 'Pesteco have an Environmental Management Plan aligned with ISO 14001 and are certified at the highest industry standard. A copy of our certification has been supplied below and our detailed management plan can be supplied upon request. Pesteco are the highest industry certified pest control company throughout Australia. Our clients can partner with Pesteco with peace of mind that our policies and procedures adhere with the highest industry standards in pest control services.',
+  :category => 'Certification',
+  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+)
+
+certificationOHS = Post.create(
+  :title => 'ISO 4801: Occupational Health and Safety',
+  :date => '20160712',
+  :body => 'Pesteco have an Occupational Health and Safety Plan aligned with AS/NZ 4801 and are certified at the highest industry standard. A copy of our certification has been supplied below and our detailed management plan can be supplied upon request. We are also certified in HACCP (Hazard Analysis Critical Control Point - Food Safety), ensuring we adhere to the highest regulations set out when dealing with food safety in and around kitchens, cafes and sites where perishable items are stored',
+  :category => 'Certification',
+  :attachments => ['sample pesteco']
+)
+
+certificationFood = Post.create(
+  :title => 'HACCP: Food Safety - Hazard Analysis Critical Control Point',
+  :date => '20160712',
+  :body => 'Pesteco is certified in HACCP (Hazard Analysis Critical Control Point - Food Safety), ensuring we adhere to the highest regulations set out when dealing with food safety in and around kitchens, cafes and sites where perishable items are stored. Pesteco has received the highest certification in Food Safety Management ensuring all technicians are trained in the safety of treatment in and around these facilities. A copy of our certification has been supplied below and our detailed management plan can be supplied upon request.',
+  :category => 'Certification',
+  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+)
+
+newsDog = Post.create(
+  :title => 'New staff announcement',
+  :date => '20161102',
+  :body => 'We are pleased to announce the latest member of the Pesteco team, Mr. Bailey. Mr Bailey comes highly regarded in the industry and is well known to Pesteco senior staff member Mr. Bruno.',
+  :category => 'News',
+  :attachments => ['Pesteco/dog']
+)
+
+newsWin = Post.create(
+  :title => 'Contract win',
+  :date => '20161101',
+  :body => "Pesteco is pleased to announce a major contract win with Urban Purveyor Group, the largest restaurant group in Australia. As the most highly certified pest management company in Australia, Pesteco is committed to delivering outstanding quality and service to its clients. Pesteco CEO, Bogdan Kolev stated 'This is a significant win for Pesteco and reinforces the quality and standard we strive for'.",
+  :category => 'News',
+  :attachments => ['Pesteco/urban']
+)
+
+# Post test
+puts "\nPOSTS......."
+puts "Posts count: #{Post.all.length}"
+puts "Post title: #{Post.all.pluck(:title)}"
+puts "Post insurance count: #{Post.all.select{|post| post.category == 'Insurance'}.length}"
+puts "Post certification count: #{Post.all.select{|post| post.category == 'Certification'}.length}"
+puts "Post news count: #{Post.all.select{|post| post.category == 'News'}.length}"

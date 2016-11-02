@@ -1,2 +1,21 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<h1>Pest management professionals</h1>
+<p>Pesteco is Australia’s most highly certified pest management company</p>
+<p>We deliver full-service expertise across retail, hospitality, commercial and residential property sectors.</p>
+<h3>About us</h3>
+<p>
+  <%= link_to 'Services', services_path %> | <%= link_to 'Latest news', news_path %>
+</p>
+<p>
+  <%= link_to 'Certification', certification_path %> | <%= link_to 'Insurance', insurance_path %>
+</p>
+<p>
+  <%= link_to 'Contact us', contact_path %>
+</p>
+
+<hr>
+
+<h3>Pesteco clients</h3>
+<p>Existing pesteco clients can access their reports by logging in to the Pesteco Dashboard service </p>
+<p>
+  <%= link_to 'Login to Pesteco Dashboard', login_path %>
+</p>
