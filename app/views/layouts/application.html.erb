@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pesteco</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= cloudinary_js_config %>
-  <meta name="viewport" content="minimal-ui, width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="mobile-web-app-capable" content="yes"/>
-  <%= favicon_link_tag 'pesteco_favicon.png', rel: 'apple-touch-icon' %>
-</head>
-<body>
-<header>
+  <head>
+    <title>Pesteco</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= cloudinary_js_config %>
+    <meta name="viewport" content="minimal-ui, width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <%= favicon_link_tag 'pesteco_favicon.png', rel: 'apple-touch-icon' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id='logo'>
+          <%= link_to image_tag('pesteco_logo.png'), root_path %>
+        </div>
 
-  <div id='logo'>
-    <%= link_to image_tag('pesteco_logo.png'), root_path %>
-  </div>
+        <nav>
+          <%= format_session_current_user_nav(@current_user) %>
+          <%= format_session_login_logout(@current_user) %>
+        </nav>
+      </header>
 
-  <nav>
-    <!-- Login if not signed in, and logout otherwise -->
-    <% unless @current_user%>
-      <%= link_to 'Login', login_path %>
-    <% else %>
-    <!-- Show admin link if current_user.admin, otherwise show user client path -->
-      <% if @current_user.admin %>
-        <%= link_to 'Admin', clients_path %> |
-      <% else %>
-        <%= link_to @current_user.name, client_path(@current_user.client) %> |
+      <hr>
+
+      <!-- FLASH message -->
+      <% if flash[:success] %>
+      <p><%= flash[:success] %></p>
       <% end %>
-      <%= link_to 'Logout', logout_path, method: :delete %>
-    <% end %>
-  </nav>
-</header>
+      <% if flash[:error] %>
+      <p><%= flash[:error] %></p>
+      <% end %>
 
-<hr>
+      <%= yield %>
+    </div>
 
-<!-- FLASH message -->
-<% if flash[:success] %>
-  <p><%= flash[:success] %></p>
-<% end %>
-<% if flash[:error] %>
-  <p><%= flash[:error] %></p>
-<% end %>
+    <footer>
+      <p>
+        <strong>Company</strong>
+      </p>
+      <ul>
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Certificates', blog_path %></li>
+        <li><%= link_to 'Insurance', blog_path %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
+      </ul>
 
-<%= yield %>
+      <p>
+        <strong>Dashboard</strong>
+      </p>
+      <ul>
+        <li><%= format_session_login_logout(@current_user) %></li>
+        <li><%= format_session_current_user_nav(@current_user) %></li>
+      </ul>
 
-</body>
+    </footer>
+
+  </body>
 </html>

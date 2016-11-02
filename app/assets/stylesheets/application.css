@@ -14,10 +14,20 @@
  *= require_self
  */
 
+html, body {
+  height: 100%;
+}
 body {
   width: 85%;
   margin: 0 auto;
 }
+.wrapper {
+  min-height: 70vh;
+}
 #logo img{
   height: 50px;
+}
+footer {
+  margin-top: 50px;
+  background-color: gainsboro;
 }
