@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
 
-
   # Generate random token and store in user column :password_reset_token, also set current time of rest in column :password_reset_sent_at. Then save user and call on the ActionMailer method password_reset in file app/mailers/user_mailer.rb
   def send_password_reset
     generate_token(:password_reset_token)
