@@ -17,12 +17,15 @@
       <nav>
         <div class="container">
           <div class="row">
-            <div class="col col-8">
-              <div id='logo'><%= link_to image_tag('pesteco_logo.png'), root_path %></div>
+            <div class="col col-6">
+              <a href="/">
+                <span class="logo"></span>
+              </a>
             </div>
-            <div class="col col-4 right">
-              <%= format_session_current_user_nav(@current_user) %>
-              <%= format_session_login_logout(@current_user) %>
+            <div class="col col-6 right">
+              <span class="user-login">
+                <%= format_session_current_user_nav(@current_user) %>
+              </span>
             </div>
           </div>
         </div>
@@ -34,10 +37,10 @@
     <!-- Main container -->
     <div class="main-container">
       <div class="container">
-      <!-- FLASH message -->
-      <p><%= format_flash_message %></p>
-
-      <%= yield %>
+        <!-- FLASH message -->
+        <p><%= format_flash_message %></p>
+        <!-- Yield app -->
+        <%= yield %>
       </div>
     </div>
 

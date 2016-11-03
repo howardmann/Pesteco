@@ -177,7 +177,6 @@ nav {
  height: 60px;
  display: block;
  position: fixed;
- padding: 0 8px;
  width: 100%;
  z-index: 1;
  background-color: white;
@@ -188,13 +187,18 @@ nav {
  margin-bottom: 0px;
  width: 100%;
 }
-#logo {
- line-height: 60px;
- font-size: 17px;
- padding-right: 20px;
+.logo {
+ background-image: image-url('pesteco_logo.png');
+ background-repeat: no-repeat;
+ background-size: 150px;
+ background-position: 10px;
+ display: inline-block;
+ height: 60px;
+ width: 100%;
+
 }
-#logo img {
-  height: 50px;
+.user-login {
+  line-height: 60px;
 }
 .nav-icon {
  line-height: 60px;
@@ -291,21 +295,8 @@ nav {
    width: 50%;
    margin-left: 0%;
  }
- .logo {
-   font-size: 14px;
-   padding-right: 5px;
- }
- .nav-icon {
-   padding-left: 5px;
- }
- .heading {
-   top: 5%;
- }
- .link {
-   font-size: 1.1em;
- }
- .devicons {
-   font-size: 2.2em;
+ .sm-col-hide {
+   display: none;
  }
  p {
    font-size: 0.9em;
