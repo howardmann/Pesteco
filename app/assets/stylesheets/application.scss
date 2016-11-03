@@ -1,0 +1,345 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* UNIVERSALS */
+
+* {
+ box-sizing: border-box;
+}
+
+html, body {
+ overflow-x: hidden;
+ margin: 0;
+ max-width: 100%;
+ font-family: 'Arial';
+ font-size: 14px;
+ line-height: 1.6;
+}
+/* TYPOGRAPHY */
+h1 {
+ font-size: 3.0rem;
+}
+h2 {
+ font-size: 2.5rem;
+}
+h3{
+ font-size: 1.5rem;
+}
+p {
+ font-size: 1.0rem;
+}
+small {
+ font-size: 0.75rem;
+}
+a {
+ text-decoration: none;
+ color: black;
+}
+/* GRID SYSTEM */
+
+.row:after {
+ content: '';
+ clear: both;
+ display: block;
+}
+.container {
+ width: 80%;
+ padding: 0 15px;
+ margin: 0 auto;
+}
+.col {
+ float: left;
+ position: relative;
+}
+.col-12 {
+ width: 100%;
+}
+.col-11 {
+ width: 91.66666666666666%;
+ width: calc(100% * 11/12);
+}
+.col-10 {
+ width: 83.33333333333334%;
+ width: calc(100% * 10/12);
+}
+.col-9 {
+ width: 75%;
+}
+.col-8 {
+ width: 66.66666666666666%;
+ width: calc(100% * 8/12);
+}
+.col-7 {
+ width: 58.333333333333336%;
+ width: calc(100% * 7/12);
+}
+.col-6 {
+ width: 50%;
+}
+.col-5 {
+ width: 41.66666666666667%;
+ width: calc(100% * 5/12);
+}
+.col-4 {
+ width: 33.33333333333333%;
+ width: calc(100% * 4/12);
+}
+.col-3 {
+ width: 25%;
+}
+.col-2 {
+ width: 16.666666666666664%;
+ width: calc(100%*2/12);
+}
+.col-1 {
+ width: 8.333333333333332%;
+ width: calc(100%*1/12);
+}
+
+/* OFFSETS */
+.offset-11 {
+ margin-left: 91.66666666666666%;
+ margin-left: calc(100% * 11/12);
+}
+.offset-10 {
+ margin-left: 83.33333333333334%;
+ margin-left: calc(100% * 10/12);
+}
+.offset-9 {
+ margin-left: 75%;
+}
+.offset-8 {
+ margin-left: 66.66666666666666%;
+ margin-left: calc(100% * 8/12);
+}
+.offset-7 {
+ margin-left: 58.333333333333336%;
+ margin-left: calc(100% * 7/12);
+}
+.offset-6 {
+ margin-left: 50%;
+}
+.offset-5 {
+ margin-left: 41.66666666666667%;
+ margin-left: calc(100% * 5/12);
+}
+.offset-4 {
+ margin-left: 33.33333333333333%;
+ margin-left: calc(100% * 4/12);
+}
+.offset-3 {
+ margin-left: 25%;
+}
+.offset-2 {
+ margin-left: 16.666666666666664%;
+ margin-left: calc(100%*2/12);
+}
+.offset-1 {
+ margin-left: 8.333333333333332%;
+ margin-left: calc(100%*1/12);
+}
+
+/* TEXT POSITIONING*/
+
+.left {
+ text-align: left;
+}
+.right {
+ text-align: right;
+}
+.center {
+ text-align: center;
+}
+.justify {
+ text-align: justify;
+}
+.flex-valign {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+/* CUSTOM STYLING */
+nav {
+ height: 60px;
+ display: block;
+ position: fixed;
+ padding: 0 8px;
+ width: 100%;
+ z-index: 1;
+ background-color: white;
+ border-bottom: 1px solid lightslategrey;
+}
+.main-container {
+ margin: 60px auto;
+ margin-bottom: 0px;
+ width: 100%;
+}
+#logo {
+ line-height: 60px;
+ font-size: 17px;
+ padding-right: 20px;
+}
+#logo img {
+  height: 50px;
+}
+.nav-icon {
+ line-height: 60px;
+ padding-left: 20px;
+}
+.about-me {
+ height: calc(100vh - 60px);
+ position: relative;
+}
+.about-me h1 {
+ display: inline;
+ border-left: 5px solid chartreuse;
+ padding-left: 10px;
+}
+.color-block:nth-child(even) {
+ background-color: gainsboro;
+}
+.arrow-down {
+ position: absolute;
+ left: 50%;
+ bottom: 5%;
+ transform: translateX(-50%)rotate(45deg);
+ width: 2rem;
+ height: 2rem;
+ border: 4px solid;
+ border-top-color: transparent;
+ border-left-color: transparent;
+}
+.heading {
+ border-bottom: 5px solid black;
+ font-size: 18px;
+ position: absolute;
+ top: 5%;
+}
+.img-profile {
+ display: block;
+ margin: 0 auto;
+ border-radius: 100%;
+ width: 50%;
+ max-width: 200px;
+}
+
+
+.img-caption {
+ display: block;
+ text-align: center;
+ margin: 10px auto;
+ font-size: 14px;
+ letter-spacing: -0.5px;
+}
+.link {
+ display: block;
+ font-size: 18px;
+ margin: 10% 0;
+ border-left: 5px solid chartreuse;
+ padding-left: 10px;
+ cursor: pointer;
+}
+.link.link-right {
+ border-left: none;
+ border-right: 5px solid white;
+ padding-right: 10px;
+}
+.img-splittr {
+ width: 80%;
+ max-width: 200px;
+}
+.devicons {
+ color: lightslategray;
+ font-size: 2.5em;
+ margin: 0 5px;
+}
+.tech-stack {
+ border-right: 5px solid gainsboro;
+ margin-top: 5px;
+ padding-right: 15px;
+}
+
+.tech-stack-left {
+ border-left: 5px solid white;
+ margin-top: 5px;
+ padding-left: 15px;
+}
+/* Phone size */
+@media (max-width: 760px) {
+ .container {
+   width: 100%;
+ }
+ .sm-col-12 {
+   width: 100%;
+   margin-left: 0%;
+ }
+ .sm-col-6 {
+   width: 50%;
+   margin-left: 0%;
+ }
+ .logo {
+   font-size: 14px;
+   padding-right: 5px;
+ }
+ .nav-icon {
+   padding-left: 5px;
+ }
+ .heading {
+   top: 5%;
+ }
+ .link {
+   font-size: 1.1em;
+ }
+ .devicons {
+   font-size: 2.2em;
+ }
+ p {
+   font-size: 0.9em;
+ }
+}
+
+/* Phone size landscape */
+@media (max-width: 760px) and (orientation:landscape) {
+ img.img-profile {
+   display: none;
+ }
+ img.img-splittr {
+   display: none;
+ }
+ .tech-stack, .tech-stack-left {
+   display: none;
+ }
+}
+
+
+/* iPad size */
+@media (max-width: 1200px) and (min-width: 761px) {
+ .md-col-12 {
+   width: 100%;
+   margin-left: 0%;
+ }
+ .md-col-6 {
+   width: 50%;
+ }
+ .md-col-4 {
+   width: 33.33333333333333%;
+   width: calc(100% * 4/12);
+ }
+ .md-col-3 {
+   width: 25%;
+ }
+}

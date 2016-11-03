@@ -12,31 +12,36 @@
     <%= favicon_link_tag 'pesteco_favicon.png', rel: 'apple-touch-icon' %>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <div id='logo'>
-          <%= link_to image_tag('pesteco_logo.png'), root_path %>
+
+    <header>
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col col-8">
+              <div id='logo'><%= link_to image_tag('pesteco_logo.png'), root_path %></div>
+            </div>
+            <div class="col col-4 right">
+              <%= format_session_current_user_nav(@current_user) %>
+              <%= format_session_login_logout(@current_user) %>
+            </div>
+          </div>
         </div>
+      </nav>
+    </header>
 
-        <nav>
-          <%= format_session_current_user_nav(@current_user) %>
-          <%= format_session_login_logout(@current_user) %>
-        </nav>
-      </header>
+    <hr>
 
-      <hr>
-
+    <!-- Main container -->
+    <div class="main-container">
+      <div class="container">
       <!-- FLASH message -->
-      <% if flash[:success] %>
-      <p><%= flash[:success] %></p>
-      <% end %>
-      <% if flash[:error] %>
-      <p><%= flash[:error] %></p>
-      <% end %>
+      <p><%= format_flash_message %></p>
 
       <%= yield %>
+      </div>
     </div>
 
+    <!-- Footer -->
     <footer>
       <p>
         <strong>Company</strong>
