@@ -3,15 +3,13 @@
 <table>
   <tr>
     <th>Client</th>
-    <th>Buildings</th>
-    <th>Reports</th>
-    <th>Authorized users</th>
+    <th>Venues</th>
+    <th>Users</th>
   </tr>
 <% @clients.each do |client| %>
   <tr>
     <td><%= link_to client.name, client_path(client) %></td>
     <td><%= client.buildings.length %></td>
-    <td><%= client.reports.length %></td>
     <td>
       <% client.users.each do |user| %>
         <%= link_to user.name, user_path(user) %>

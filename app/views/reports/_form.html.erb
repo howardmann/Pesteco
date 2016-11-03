@@ -6,7 +6,7 @@
       <%= f.date_field :date, :value => Date.today, :autofocus => true, :required => true %>
     </p>
     <p>
-      <%= f.label 'PDF file upload' %><br>
+      <%= f.label 'PDF file upload (1 file limit)' %><br>
       <%= f.cl_image_upload :pdf, :html => {:accept => '.pdf', :required => true} %>
     </p>
     <p>

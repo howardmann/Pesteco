@@ -17,6 +17,6 @@ class PagesController < ApplicationController
   end
 
   def news
-    @posts_news = Post.all.select{|post| post.category == "News"}
+    @posts_news = Post.all.order('date DESC').select{|post| post.category == "News"}
   end
 end

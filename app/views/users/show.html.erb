@@ -18,3 +18,9 @@
 
 <h2>Buildings</h2>
 <%= render 'shared/buildings', object: @user %>
+
+<% if @user %>
+  <button>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+  </button>
+<% end %>
