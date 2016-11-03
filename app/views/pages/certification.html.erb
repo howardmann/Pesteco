@@ -3,7 +3,7 @@
 <p>We guarantee a higher quality standard, an environmentally sustainable solution and the safest possible work environment for our client and our employees.</p>
 <p>Please see below a summary of our highest certifications and links to supporting documentation:</p>
 <ul>
-<% @posts_certification.each do |post| %>
+  <% @posts_certification.each do |post| %>
   <li><%= link_to post.title, post_path(post) %></li>
-<% end %>
+  <% end %>
 </ul>

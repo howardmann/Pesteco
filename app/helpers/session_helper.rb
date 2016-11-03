@@ -9,12 +9,8 @@ module SessionHelper
     end
   end
 
-  def format_session_login_logout(user)
-    unless user
-      link_to 'Login', login_path
-    else
-      link_to 'Logout', logout_path, method: :delete
-    end
+  def format_session_logout(user)
+    link_to 'Logout', logout_path, method: :delete if user
   end
 
 end

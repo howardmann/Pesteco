@@ -1,21 +1,33 @@
 <h1>Pest management professionals</h1>
-<p>Pesteco is Australia’s most highly certified pest management company</p>
-<p>We deliver full-service expertise across retail, hospitality, commercial and residential property sectors.</p>
-<h3>About us</h3>
-<p>
-  <%= link_to 'Services', services_path %> | <%= link_to 'Latest news', news_path %>
-</p>
-<p>
-  <%= link_to 'Certification', certification_path %> | <%= link_to 'Insurance', insurance_path %>
-</p>
-<p>
-  <%= link_to 'Contact us', contact_path %>
-</p>
+<p>Pesteco is Australia’s most highly certified pest management company.</p>
+<p>Based in Sydney, we deliver full-service expertise across retail, hospitality, commercial and residential property sectors.</p>
 
-<hr>
+<div class="row">
+  <div class="col sm-col-12 col-6">
+    <h2>About us</h2>
+    <p>Find out more information about our fully-certified and environmentally safe pest management solutions</p>
+    <p>
+      <%= link_to 'Services', services_path %>
+    </p>
+  </div>
 
-<h3>Pesteco clients</h3>
-<p>Existing pesteco clients can access their reports by logging in to the Pesteco Dashboard service </p>
-<p>
-  <%= link_to 'Login to Pesteco Dashboard', login_path %>
-</p>
+  <div class="col sm-col-12 col-6">
+    <h2>Pesteco clients</h2>
+    <p>Existing pesteco clients can access their reports by logging in to the Pesteco Dashboard service
+    </p>
+    <p>
+      <%= link_to 'Login to Pesteco Dashboard', login_path %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 center">
+    <div class="call-out row-shade">
+      <h2>Contact us for a quote</h2>
+      <h3>0411 268 868</h3>
+
+      <h3><a href="mailto:bogdan@pesteco.com.au">Email us</a></h3>
+    </div>
+  </div>
+</div>

@@ -12,17 +12,16 @@
     <%= favicon_link_tag 'pesteco_favicon.png', rel: 'apple-touch-icon' %>
   </head>
   <body>
-
     <header>
       <nav>
         <div class="container">
           <div class="row">
-            <div class="col col-6">
+            <div class="col col-8">
               <a href="/">
                 <span class="logo"></span>
               </a>
             </div>
-            <div class="col col-6 right">
+            <div class="col col-4 right">
               <span class="user-login">
                 <%= format_session_current_user_nav(@current_user) %>
               </span>
@@ -40,31 +39,49 @@
         <!-- FLASH message -->
         <p><%= format_flash_message %></p>
         <!-- Yield app -->
-        <%= yield %>
+        <div class="row">
+          <div class="col col-12">
+            <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer>
-      <p>
-        <strong>Company</strong>
-      </p>
-      <ul>
-        <li><%= link_to 'About', about_path %></li>
-        <li><%= link_to 'Certification', certification_path %></li>
-        <li><%= link_to 'Insurance', insurance_path %></li>
-        <li><%= link_to 'News', news_path %></li>
-        <li><%= link_to 'Contact', contact_path %></li>
-      </ul>
-
-      <p>
-        <strong>Dashboard</strong>
-      </p>
-      <ul>
-        <li><%= format_session_login_logout(@current_user) %></li>
-        <li><%= format_session_current_user_nav(@current_user) %></li>
-      </ul>
-
+      <div class="container">
+        <div class="row">
+          <div class="col sm-col-6 col-4">
+            <h4>Company</h4>
+            <ul>
+              <li><%= link_to 'About', about_path %></li>
+              <li><%= link_to 'News', news_path %></li>
+              <li><%= link_to 'Contact', contact_path %></li>
+            </ul>
+          </div>
+          <div class="col sm-col-6 col-4">
+            <h4>Documents</h4>
+            <ul>
+              <li><%= link_to 'Certification', certification_path %></li>
+              <li><%= link_to 'Insurance', insurance_path %></li>
+            </ul>
+          </div>
+          <div class="col sm-col-12 col-4">
+            <h4>Clients</h4>
+            <ul>
+              <li><%= format_session_logout(@current_user) %></li>
+              <li><%= format_session_current_user_nav(@current_user) %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 right">
+          <div class="container">
+          <small>Website designed and coded by <a href="https://au.linkedin.com/in/howard-mann-17450933" target="_blank">Howie Mann</a></small>
+          </div>
+        </div>
+      </div>
     </footer>
 
   </body>
