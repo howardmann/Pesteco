@@ -52,3 +52,5 @@ group :production do
 end
 
 gem 'cloudinary'
+
+gem 'will_paginate', '~> 3.1.0'
