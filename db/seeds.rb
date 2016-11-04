@@ -232,7 +232,7 @@ certificationFood = Post.create(
 newsDog = Post.create(
   :title => 'New staff announcement',
   :date => '20161102',
-  :body => 'We are pleased to announce the latest member of the Pesteco team, Mr. Bailey. Mr Bailey comes highly regarded in the industry and is well known to Pesteco senior staff member Mr. Bruno.',
+  :body => '<p>We are pleased to announce the latest member of the Pesteco team, Mr. Bailey. Mr Bailey comes highly regarded in the industry and is well known to Pesteco senior staff member Mr. Bruno.</p>',
   :category => 'News',
   :attachments => ['Pesteco/dog']
 )
@@ -240,7 +240,7 @@ newsDog = Post.create(
 newsWin = Post.create(
   :title => 'Contract win',
   :date => '20161101',
-  :body => "Pesteco is pleased to announce a major contract win with Urban Purveyor Group, the largest restaurant group in Australia. As the most highly certified pest management company in Australia, Pesteco is committed to delivering outstanding quality and service to its clients. Pesteco CEO, Bogdan Kolev stated 'This is a significant win for Pesteco and reinforces the quality and standard we constantly deliver'.",
+  :body => "<p>Pesteco is pleased to announce a major contract win with Urban Purveyor Group, the largest restaurant group in Australia. As the most highly certified pest management company in Australia, Pesteco is committed to delivering outstanding quality and service to its clients. Pesteco CEO, Bogdan Kolev stated 'This is a significant win for Pesteco and reinforces the quality and standard we constantly deliver'.</p>",
   :category => 'News',
   :attachments => ['Pesteco/urban']
 )

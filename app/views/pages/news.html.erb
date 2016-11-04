@@ -3,7 +3,7 @@
 <% @posts_news.each do |post|  %>
   <h3><%= post.title %></h3>
   <p><%= post.date.strftime('%d %B %Y') %></p>
-  <p><%= post.body %></p>
+  <%= post.body.html_safe %>
   <% post.attachments.each do |attachment| %>
     <%= cl_image_tag(attachment, :width => 200, :height => 200, :crop => :fill) %>
   <% end %>

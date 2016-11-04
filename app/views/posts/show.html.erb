@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<p><%= @post.body.html_safe %></p>
 <h3>Supporting attachments</h3>
 
 <% @post.attachments.each do |attachment| %>

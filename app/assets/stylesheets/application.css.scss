@@ -70,7 +70,6 @@ a {
 ul {
   list-style-type: square;
   padding-left: 18px;
-  color: $color-primary2;
 }
 ul ul {
   list-style-type: circle;
@@ -257,7 +256,7 @@ footer {
   left: calc(-50vw + 50%);
 }
 .call-out {
-  margin: 30px 0px 0px 0px;
+  margin: 30px 0px -50px 0px;
   padding: 20px 0;
 }
 
