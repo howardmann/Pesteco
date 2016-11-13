@@ -17,5 +17,14 @@
 //= require_tree .
 
 $(document).ready(function(){
-  console.log("hello");
+  $('#trumbowyg-demo').trumbowyg({
+    svgPath: '/assets/trumbowyg/images/icons.svg',
+    autogrow: true,
+    btns: [
+        ['formatting'],
+        ['bold', 'italic', 'underline'],
+        'btnGrp-lists'
+    ]
+  });
+
 });

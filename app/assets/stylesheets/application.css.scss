@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require trumbowyg/trumbowyg
  *= require_tree .
  *= require_self
+ *= require trumbowyg/trumbowyg
  */
 
  /* COLOR TEMPLATE */
@@ -310,6 +310,12 @@ button, input[type=submit] {
 fieldset {
   border-color: $color-primary1;
 }
+
+/* TRUMBOWYG */
+.trumbowyg-button-group button {
+  margin-top: 0px;
+}
+
 /* TABLE STYLING */
 table {
   width: 100%;
