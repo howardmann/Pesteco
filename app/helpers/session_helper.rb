@@ -5,7 +5,7 @@ module SessionHelper
     elsif user
       account = link_to user.name.split(' ')[0], client_path(user.client)
     else
-      link_to 'Login', login_path
+      link_to 'Client Login', login_path
     end
   end
 
