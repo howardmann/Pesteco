@@ -55,4 +55,6 @@ gem 'cloudinary'
 
 gem 'will_paginate', '~> 3.1.0'
 
-gem 'ckeditor'
+# gem 'ckeditor'
+
+gem 'trumbowyg_rails'

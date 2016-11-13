@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require cloudinary
-//= require ckeditor/init
-//= require_tree ./ckeditor
+//= require trumbowyg/trumbowyg
+//= require_tree .
+
+$(document).ready(function(){
+  console.log("hello");
+});

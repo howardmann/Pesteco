@@ -5,3 +5,9 @@
   <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
+
+<% if @current_user && @current_user.admin %>
+<button>
+  <%= link_to 'Add new insurance', new_post_path %>
+</button>
+<% end %>
