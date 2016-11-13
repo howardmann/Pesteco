@@ -313,6 +313,16 @@ button, input[type=submit] {
 fieldset {
   border-color: $color-primary1;
 }
+/* OVERRIDE TEXT SELECT COLOR */
+::selection {
+  background: $color-primary3;
+}
+::-moz-selection {
+  background: $color-primary3;
+}
+a::selection {
+  background: $color-primary4;
+}
 
 /* TRUMBOWYG */
 .trumbowyg-button-group button {
