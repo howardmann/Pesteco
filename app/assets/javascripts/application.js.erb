@@ -18,11 +18,11 @@
 
 $(document).ready(function(){
 
-  // For ios homescreen prevent loading new safari window
-  $('a').click(function() {
-    document.location = $(this).attr('href');
-    return false;
-  });
+  // For ios homescreen prevent loading new safari window. Disable because it causes all sorts of issues
+  // $('a').click(function() {
+  //   document.location = $(this).attr('href');
+  //   return false;
+  // });
 
   // Load wysywig text editor
   $('#trumbowyg-demo').trumbowyg({
