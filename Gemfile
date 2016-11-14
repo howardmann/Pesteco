@@ -55,6 +55,6 @@ gem 'cloudinary'
 
 gem 'will_paginate', '~> 3.1.0'
 
-# gem 'ckeditor'
-
 gem 'trumbowyg_rails'
+
+gem 'add-to-homescreen-rails'
