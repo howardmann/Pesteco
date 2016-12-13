@@ -58,3 +58,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'trumbowyg_rails'
 
 gem 'add-to-homescreen-rails'
+
+gem 'newrelic_rpm'
