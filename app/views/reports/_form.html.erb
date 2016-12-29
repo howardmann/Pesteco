@@ -7,7 +7,7 @@
     </p>
     <p>
       <%= f.label 'PDF file upload (1 file limit)' %><br>
-      <%= f.file_field :pdf %>
+      <%= f.cl_image_upload :pdf %>
       <!-- <%= f.cl_image_upload :pdf, :html => {:accept => '.pdf', :required => true} %> -->
     </p>
     <p>
