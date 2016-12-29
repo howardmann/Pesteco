@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: "donotreply@pesteco.com"
+  default from: "info@pesteco.com.au"
 
   def welcome(user)
     @user = user
-    mail( :to => @user.email, :subject => 'Pesteco welcome', :cc => 'howardmann27@gmail.com' )
+    mail( :to => @user.email, :subject => 'Pesteco welcome', :bcc => 'howardmann27@gmail.com' )
   end
 
   def password_reset(user)
