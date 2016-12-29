@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome(user)
     @user = user
-    mail( :to => @user.email, :subject => 'Pesteco welcome', :bcc => 'howardmann27@gmail.com' )
+    mail( :to => @user.email, :subject => 'Pesteco welcome' )
   end
 
   def password_reset(user)
