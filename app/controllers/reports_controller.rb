@@ -18,6 +18,7 @@ class ReportsController < ApplicationController
       title = "Pesteco/#{building}/(#{params[:report][:date]})#{building}"
       req = Cloudinary::Uploader.upload(params[:file], :folder => 'Pesteco')
       # Using the public_id of the Cloudinary file allows us to use Cloudinary's powerful transformation methods
+      p req
       @report.pdf = req['public_id']
     end
     # Save image and append to building
