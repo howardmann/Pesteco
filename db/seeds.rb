@@ -87,20 +87,106 @@ newport = Building.create(
 )
 
 # Urban Purveyor buildings
-sake = Building.create(
-  :name => 'Sake The Rocks',
-  :address => '12 Argyle Street, Sydney NSW 2000'
+fratelliBridge = Building.create(
+  :name => 'Fratelli Fresh Bridge St',
+  :address => '11 Bridge St, Sydney NSW 2000'
 )
 
-bavarian = Building.create(
-  :name => 'Bavarian Bondi Beach',
-  :address => '108 Campbell Parade, Bondi Beach NSW 2026'
+fratelliFreshMacquarie = Building.create(
+  :name => 'Fratelli Fresh Macquarie St',
+  :address => '229-231 Macquarie St, Sydney NSW 2000'
 )
 
-fratelli = Building.create(
+fratelliWalshBay = Building.create(
+  :name => 'Fratelli Fresh Walsh Bay',
+  :address => '8/16 Hickson Rd, Walsh Bay NSW 2000'
+)
+
+fratelliPottsPoint = Building.create(
+  :name => 'Fratelli Fresh Potts Point',
+  :address => '81 MacLeay St, Potts Point NSW 2011'
+)
+
+fratelliAlexandria = Building.create(
   :name => 'Fratelli Fresh Alexandria',
-  :address => '52 Mitchell Road, Alexandria NSW 2015'
+  :address => '52 Mitchell Rd, Alexandria NSW 2015'
 )
+
+fratelliCrows = Building.create(
+  :name => 'Fratelli (Crows Nest)',
+  :address => '118 Willoughby Rd, Crows Nest NSW 2065'
+)
+
+cafeAnanas = Building.create(
+  :name => 'Café Ananas',
+  :address => '2 Phillip St, Sydney NSW 2000'
+)
+
+fratelliFamous = Building.create(
+  :name => 'Fratelli Famous (World Square)',
+  :address => 'World Square, Latitude Tower World Square, 644 George St, Sydney NSW 2000'
+)
+
+bavarianWorld = Building.create(
+  :name => 'Bavarian Bier Café (World Square)',
+  :address => 'World Square, Latitude Tower World Square, 644 George St, Sydney NSW 2000'
+)
+
+sakeGrosvenor = Building.create(
+  :name => 'Sake Jnr Grosvenor Place',
+  :address => '225 George St, The Rocks NSW 2000'
+)
+
+bavarianManly = Building.create(
+  :name => 'Bavarian Bier Café (Manly)',
+  :address => 'Manly Wharf, 2-5 E Esplanade, Manly NSW 2095'
+)
+
+argyleSake = Building.create(
+  :name => 'The Argyle - Sake Restaurant & Bar',
+  :address => '12 Argyle St, The Rocks NSW 2000'
+)
+
+argyleCut = Building.create(
+  :name => 'The Argyle - The Cut',
+  :address => '12 Argyle St, The Rocks NSW 2000'
+)
+
+argyleElCamino = Building.create(
+  :name => 'The Argyle - El Camino Cantino',
+  :address => '12 Argyle St, The Rocks NSW 2000'
+)
+
+argyleMunich = Building.create(
+  :name => 'The Argyle - Munich Brauhaus',
+  :address => '12 Argyle St, The Rocks NSW 2000'
+)
+
+argyleBar = Building.create(
+  :name => 'The Argyle - Argyle Bar',
+  :address => '12 Argyle St, The Rocks NSW 2000'
+)
+
+hanseatic = Building.create(
+  :name => 'Hanseatic Fine Foods',
+  :address => '26 Ferndell St, South Granville NSW 2142'
+)
+
+
+# sake = Building.create(
+#   :name => 'Sake The Rocks',
+#   :address => '12 Argyle Street, Sydney NSW 2000'
+# )
+#
+# bavarian = Building.create(
+#   :name => 'Bavarian Bondi Beach',
+#   :address => '108 Campbell Parade, Bondi Beach NSW 2026'
+# )
+#
+# fratelli = Building.create(
+#   :name => 'Fratelli Fresh Alexandria',
+#   :address => '52 Mitchell Road, Alexandria NSW 2015'
+# )
 
 # Harris Farm buildings
 harrisBondi = Building.create(
@@ -157,7 +243,9 @@ p "Wong building reports: #{wong.reports.pluck(:date)}"
 
 # ASSOCIATIONS
 merivale.buildings << coogee << wong << newport
-urban.buildings << sake << bavarian << fratelli
+
+urban.buildings << fratelliBridge << fratelliFreshMacquarie << fratelliWalshBay << fratelliPottsPoint << fratelliAlexandria << fratelliCrows << cafeAnanas << fratelliFamous << bavarianWorld << sakeGrosvenor << bavarianManly << argyleSake << argyleCut << argyleElCamino << argyleMunich << argyleBar << hanseatic
+
 harris.buildings << harrisBondi << harrisDrummoyne << harrisNorton
 
 merivale.users << michael
