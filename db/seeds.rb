@@ -270,23 +270,23 @@ puts "Sam's buildings: #{sam.buildings.all.pluck(:name)}"
 # POSTS ..........................................
 Post.destroy_all
 insuranceProperty = Post.create(
-  :title => 'Property insurance',
+  :title => 'Public liability and professional indemnity insurance',
   :date => '20161010',
-  :body => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tempore tempora suscipit ratione doloremque dolores ullam, optio sint aut error, illum, nemo, porro? Illo placeat maiores debitis assumenda, eum provident.',
+  :body => "See attachments below for Pesteco's latest public liability and professional indemnity insurance.",
   :category => 'Insurance',
-  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+  :attachments => ['Pesteco/publicliability']
 )
 
 insuranceWorkers = Post.create(
-  :title => 'Workers insurance',
+  :title => "Worker's compensation insurance",
   :date => '20161009',
-  :body => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tempore tempora suscipit ratione doloremque dolores ullam, optio sint aut error, illum, nemo, porro? Illo placeat maiores debitis assumenda, eum provident.',
+  :body => "See attachments below for Pesteco's latest worker's compensation insurance",
   :category => 'Insurance',
-  :attachments => ['sample pesteco', 'sample pesteco', 'sample pesteco']
+  :attachments => ['Pesteco/workersinsurance']
 )
 
 certificationQuality = Post.create(
-  :title => 'IS O9001: Quality Management System',
+  :title => 'ISO 9001: Quality Management System',
   :date => '20160712',
   :body => 'Pesteco have Quality Management Plan aligned with ISO 9001:2015 and are certified at the highest industry standard. A copy of our certification has been supplied below and our detailed management plan can be supplied upon request. With quality at the core of everything Pesteco do, our clients will be guaranteed exceptional service and reliability.',
   :category => 'Certification',
