@@ -33,7 +33,7 @@
 <br>
 
 <% if @current_user && @current_user.admin %>
-  <button>
-    <%= link_to 'Add new report', new_building_report_path(@building) %>
-  </button>
+  <%= link_to new_building_report_path(@building) do %>
+    <button>Add new report</button>
+  <% end %>
 <% end %>

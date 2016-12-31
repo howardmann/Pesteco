@@ -270,17 +270,17 @@ puts "Sam's buildings: #{sam.buildings.all.pluck(:name)}"
 # POSTS ..........................................
 Post.destroy_all
 insuranceProperty = Post.create(
-  :title => 'Public liability and professional indemnity insurance',
+  :title => 'Public Liability and Professional Indemnity',
   :date => '20161010',
-  :body => "See attachments below for Pesteco's latest public liability and professional indemnity insurance.",
+  :body => "Pesteco currently holds insurance policies with Pacific International Insurance for Public Liability and Professional Indemnity.",
   :category => 'Insurance',
   :attachments => ['Pesteco/publicliability']
 )
 
 insuranceWorkers = Post.create(
-  :title => "Worker's compensation insurance",
+  :title => "Workers Compensation",
   :date => '20161009',
-  :body => "See attachments below for Pesteco's latest worker's compensation insurance",
+  :body => "Pesteco currently holds insurance policies with CGU Insurance for Workers Compensation.",
   :category => 'Insurance',
   :attachments => ['Pesteco/workersinsurance']
 )

@@ -19,6 +19,7 @@
 <% end %>
 </table>
 <br>
-<button>
-  <%= link_to 'Add new client', new_client_path %>
-</button>
+
+<%= link_to new_client_path do %>
+  <button>Add new client</button>
+<% end %>

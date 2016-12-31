@@ -16,9 +16,9 @@
 <br>
 
 <% if @current_user && @current_user.admin %>
-  <button>
-    <%= link_to 'Add new building', new_client_building_path(@client) %>
-  </button>
+  <%= link_to new_client_building_path(@client) do %>
+    <button>Add new building</button>
+  <% end %>
 <% end %>
 
 <hr>

@@ -310,6 +310,9 @@ button, input[type=submit] {
   a {
     color: white;
   }
+  &:hover {
+    background-color: $color-primary2;
+  }
 }
 fieldset {
   border-color: $color-primary1;
@@ -381,6 +384,9 @@ th {
  }
  p {
    font-size: 0.9em;
+ }
+ .sm-center {
+   text-align: center;
  }
 }
 
