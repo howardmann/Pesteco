@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col col-12 center">
-    <span class="heading">PEST CONTROL EXPERTS</span>
+    <span class="heading">The Pest Control Experts</span>
   </div>
 </div>
 
@@ -11,17 +11,18 @@
 </div>
 
 <div class="row">
-  <div class="col sm-col-12 col-6">
+  <div class="col sm-col-12 col-6 center">
     <h2>About us</h2>
-    <p>Find out more information about our fully-certified and environmentally safe pest management solutions</p>
-    <p>
-      <%= link_to 'Find out more', services_path %>
-    </p>
+    <p class="left">Find out more information about our fully-certified and environmentally safe pest management solutions</p>
+    <%= link_to services_path do %>
+      <button class="find-out">Find out more</button>
+    <% end %>
+
   </div>
 
-  <div class="col sm-col-12 col-6">
+  <div class="col sm-col-12 col-6 center">
     <h2>Pesteco clients</h2>
-    <p>Existing pesteco clients can access their reports by logging in to the Pesteco Dashboard service
+    <p class="left">Existing pesteco clients can access their reports by logging in to the Pesteco Dashboard service
     </p>
 
     <%= link_to login_path do %>

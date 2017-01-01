@@ -46,11 +46,9 @@ html, body {
 /* TYPOGRAPHY */
 h2, h3, h4 {
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
 }
 h1 {
  font-size: 3.0rem;
- font-family: 'Roboto', sans-serif;
 }
 h2 {
  font-size: 2.25rem;
@@ -250,9 +248,9 @@ nav {
 }
 
 .logo {
- background-image: image-url('pesteco_logo.png');
+ background-image: image-url('logosignature.png');
  background-repeat: no-repeat;
- background-size: 150px;
+ background-size: 250px;
  background-position: 10px;
  display: inline-block;
  height: 60px;
@@ -342,6 +340,12 @@ button, input[type=submit] {
 fieldset {
   border-color: $color-primary1;
 }
+button.find-out {
+  background-color: $color-secondary2;
+  &:hover {
+    background-color: $color-secondary1;
+  }
+}
 /* OVERRIDE TEXT SELECT COLOR */
 ::selection {
   background: $color-primary3;
@@ -413,11 +417,23 @@ th {
  .sm-center {
    text-align: center;
  }
+ .logo {
+  background-image: image-url('pesteco_logo.png');
+  background-size: 150px;
+ }
+ .heading {
+   font-size: 35px;
+   line-height: 1.2;
+   margin-bottom: 25px;
+   margin-top: 50px;
+ }
+
 }
 
 /* Phone size landscape */
 @media (max-width: 760px) and (orientation:landscape) {
 // Placeholder
+
 }
 
 
