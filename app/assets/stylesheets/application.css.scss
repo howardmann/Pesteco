@@ -44,8 +44,9 @@ html, body {
  color: $color-secondary1;
 }
 /* TYPOGRAPHY */
-h2, h3, h4 {
+h1, h2, h3, h4 {
   font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
  font-size: 3.0rem;
