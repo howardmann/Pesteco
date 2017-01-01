@@ -25,11 +25,11 @@ michael = User.create(
   :mobile => '0400000000'
 )
 
-vader = User.create(
-  :email => 'vader@email.com',
+urbantest = User.create(
+  :email => 'urbantest@email.com',
   :password => 'chicken',
   :password_confirmation => 'chicken',
-  :name => 'Darth Vader',
+  :name => 'Urban test',
   :mobile => '0411111111'
 )
 
@@ -249,7 +249,7 @@ urban.buildings << fratelliBridge << fratelliFreshMacquarie << fratelliWalshBay 
 harris.buildings << harrisBondi << harrisDrummoyne << harrisNorton
 
 merivale.users << michael
-urban.users << vader
+urban.users << urbantest
 harris.users << sam
 
 # Association tests
@@ -264,7 +264,7 @@ puts "\nHarris buildings: #{harris.buildings.all.pluck(:name)}"
 puts "Harris users: #{harris.users.all.pluck(:name)}"
 
 puts "\nMichael's buildings: #{michael.buildings.all.pluck(:name)}"
-puts "Vader's buildings: #{vader.buildings.all.pluck(:name)}"
+puts "Urban's buildings: #{urbantest.buildings.all.pluck(:name)}"
 puts "Sam's buildings: #{sam.buildings.all.pluck(:name)}"
 
 # POSTS ..........................................
