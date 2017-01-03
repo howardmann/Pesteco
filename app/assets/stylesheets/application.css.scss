@@ -278,6 +278,7 @@ footer {
     padding-left: 0;
   }
 }
+
 .row-shade {
   background-color: $color-primary4;
   position: relative;
@@ -285,8 +286,23 @@ footer {
   left: calc(-50vw + 50%);
 }
 .call-out {
-  margin: 30px 0px -50px 0px;
+  margin: 0px 0px -50px 0px;
   padding: 20px 0;
+}
+
+.row-shade.client {
+  background-color: $color-primary2;
+  margin-top: 80px;
+  padding: 38px 0px;
+}
+h3.client-heading {
+  font-size: 24px;
+  color: white;
+}
+
+.client-logos {
+  width: 65%;
+  margin: 20px 0px;
 }
 
 
@@ -428,7 +444,13 @@ th {
    margin-bottom: 25px;
    margin-top: 50px;
  }
-
+ h3.client-heading {
+   font-size: 20px;
+ }
+ .client-logos {
+   width: 95%;
+   margin: 20px 0px;
+ }
 }
 
 /* Phone size landscape */
