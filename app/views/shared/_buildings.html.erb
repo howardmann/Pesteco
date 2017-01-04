@@ -4,7 +4,7 @@
     <th>Address</th>
     <th>Reports</th>
   </tr>
-  <% object.buildings.each do |building| %>
+  <% object.buildings.order('name ASC').each do |building| %>
   <tr>
     <td><%= link_to building.name, building_path(building) %></td>
     <td><%= building.address %></td>
