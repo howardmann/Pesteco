@@ -233,13 +233,13 @@ nav {
   font-weight: bold;
   font-size: 45px;
   display: block;
-  margin-top: 75px;
+  margin-top: 40px;
   color: $color-primary2;
 }
 
 .subheading {
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 5px;
   margin-bottom: 59px;
 }
@@ -451,6 +451,27 @@ th {
    width: 95%;
    margin: 20px 0px;
  }
+}
+
+.pest-solution {
+  width: 100%;
+  max-width: 77px;
+  padding-right: 5px;
+}
+.solution-heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-right: 20px;
+  padding-left: 10px;
+  margin: 0px;
+}
+.solution-text {
+  font-weight: lighter;
+  font-size: 14px;
+  padding-right: 20px;
+  padding-left: 10px;
+  margin-top: 8px;
 }
 
 /* Phone size landscape */

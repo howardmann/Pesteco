@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="236px" height="236px" viewBox="0 0 236 236" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>rodent_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-35.1151853" y="108.938885" width="298.13811" height="10.0299706"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-6" y="-6" width="310.13811" height="22.0299706">
+            <rect x="-41.1151853" y="102.938885" width="310.13811" height="22.0299706" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="226" height="226"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="226" height="226" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-654.000000, -349.000000)">
+            <g id="rodent_logo" transform="translate(658.000000, 353.000000)">
+                <g id="rodent_bug" transform="translate(117.000000, 116.000000) rotate(-45.000000) translate(-117.000000, -116.000000) translate(57.000000, 30.000000)">
+                    <path d="M52.8120377,156.873674 C52.8120377,156.873674 50.2074004,162.809257 54.3277206,165.069812 C65.996732,171.471848 95.2164067,177.566789 108.080731,162.109655 C125.48744,141.194618 102.316618,82.4076177 106.335404,71.9344189 C110.354189,61.46122 119.716245,64.3713345 119.716245,64.3713345" id="Path-3" stroke="#68A225" stroke-width="5" stroke-linecap="round"></path>
+                    <path d="M51.9673373,160 C69.6404493,160 90.9686523,143.83259 90.9686523,99.64981 C90.9686523,55.46703 69.6404493,0 51.9673373,0 C34.2942254,0 14,54.4338937 14,98.6166737 C14,142.799454 34.2942254,160 51.9673373,160 Z" id="Oval-2" fill="#68A225"></path>
+                    <ellipse id="Oval-3" fill="#68A225" transform="translate(26.495034, 37.995766) rotate(-33.000000) translate(-26.495034, -37.995766) " cx="26.4950343" cy="37.9957662" rx="22.5" ry="14"></ellipse>
+                    <ellipse id="Oval-3" fill="#68A225" transform="translate(80.495034, 37.995766) scale(1, -1) rotate(-33.000000) translate(-80.495034, -37.995766) " cx="80.4950343" cy="37.9957662" rx="22.5" ry="14"></ellipse>
+                </g>
+                <g id="square">
+                    <g id="Rectangle-6" transform="translate(113.953870, 113.953870) rotate(-45.000000) translate(-113.953870, -113.953870) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="12" xlink:href="#path-1"></use>
+                    </g>
+                    <use id="Rectangle-5" stroke="#68A225" mask="url(#mask-4)" stroke-width="20" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

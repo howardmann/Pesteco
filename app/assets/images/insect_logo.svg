@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="236px" height="236px" viewBox="0 0 236 236" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>insect_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M79.6482323,59 C98.7839226,59 98.7839226,-2 79.6482323,-2 C60.512542,-2 45,11.6553151 45,28.5 C45,45.3446849 60.512542,59 79.6482323,59 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="49" height="61" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <polygon id="path-3" points="82 40 100.658007 23.7221591 120.045157 47.7851005 129 40 129 44 119.564386 49.660449 100.658007 27.6250481 82 44"></polygon>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="81" y="22.7221591" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+        <polygon id="path-5" points="10 40 28.6580068 23.7221591 48.0451573 47.7851005 57 40 57 44 47.5643861 49.660449 28.6580068 27.6250481 10 44"></polygon>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="9" y="22.7221591" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-5" fill="black"></use>
+        </mask>
+        <polygon id="path-7" points="89 86 107.658007 69.7221591 127.045157 93.7851005 136 86 136 90 126.564386 95.660449 107.658007 73.6250481 89 90"></polygon>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="88" y="68.7221591" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-7" fill="black"></use>
+        </mask>
+        <polygon id="path-9" points="3 84 21.6580068 67.7221591 41.0451573 91.7851005 50 84 50 88 40.5643861 93.660449 21.6580068 71.6250481 3 88"></polygon>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="2" y="66.7221591" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-9" fill="black"></use>
+        </mask>
+        <polygon id="path-11" points="79.7148766 126.851564 98.3728834 110.573723 117.760034 134.636665 126.714877 126.851564 126.714877 130.851564 117.279263 136.512013 98.3728834 114.476612 79.7148766 130.851564"></polygon>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="78.7148766" y="109.573723" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-11" fill="black"></use>
+        </mask>
+        <polygon id="path-13" points="10.7148766 126.851564 29.3728834 110.573723 48.7600339 134.636665 57.7148766 126.851564 57.7148766 130.851564 48.2792627 136.512013 29.3728834 114.476612 10.7148766 130.851564"></polygon>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="49" height="27.9382899">
+            <rect x="9.71487662" y="109.573723" width="49" height="27.9382899" fill="white"></rect>
+            <use xlink:href="#path-13" fill="black"></use>
+        </mask>
+        <rect id="path-15" x="-35.1151853" y="108.938885" width="298.13811" height="10.0299706"></rect>
+        <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-6" y="-6" width="310.13811" height="22.0299706">
+            <rect x="-41.1151853" y="102.938885" width="310.13811" height="22.0299706" fill="white"></rect>
+            <use xlink:href="#path-15" fill="black"></use>
+        </mask>
+        <rect id="path-17" x="0" y="0" width="226" height="226"></rect>
+        <mask id="mask-18" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="226" height="226" fill="white">
+            <use xlink:href="#path-17"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-380.000000, -349.000000)">
+            <g id="insect_logo" transform="translate(384.000000, 353.000000)">
+                <g id="insect_bug" transform="translate(122.126677, 117.126677) rotate(-45.000000) translate(-122.126677, -117.126677) translate(52.126677, 35.626677)">
+                    <ellipse id="Oval" fill="#68A225" transform="translate(69.500000, 83.500000) rotate(90.000000) translate(-69.500000, -83.500000) " cx="69.5" cy="83.5" rx="79.5" ry="30.5"></ellipse>
+                    <use id="Oval" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="8" fill="#68A225" transform="translate(69.500000, 28.500000) rotate(90.000000) translate(-69.500000, -28.500000) " xlink:href="#path-1"></use>
+                    <path d="M77.3874943,18.5884527 C99.7188205,-11.0347352 130.709232,9.01788432 130.709232,9.01788432" id="Path-2" stroke="#68A225" stroke-width="3" transform="translate(104.048363, 10.486336) rotate(3.000000) translate(-104.048363, -10.486336) "></path>
+                    <path d="M9.38749425,17.5884527 C31.7188205,-12.0347352 62.7092324,8.01788432 62.7092324,8.01788432" id="Path-2" stroke="#68A225" stroke-width="3" transform="translate(36.048363, 9.486336) scale(-1, 1) rotate(3.000000) translate(-36.048363, -9.486336) "></path>
+                    <g id="Rectangle-11">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use stroke="#68A225" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Rectangle-11" transform="translate(33.500000, 36.691304) scale(-1, 1) translate(-33.500000, -36.691304) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <use stroke="#68A225" mask="url(#mask-6)" stroke-width="2" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="Rectangle-11" transform="translate(112.500000, 82.691304) rotate(-20.000000) translate(-112.500000, -82.691304) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-7"></use>
+                        <use stroke="#68A225" mask="url(#mask-8)" stroke-width="2" xlink:href="#path-7"></use>
+                    </g>
+                    <g id="Rectangle-11" transform="translate(26.500000, 80.691304) scale(-1, 1) rotate(-17.000000) translate(-26.500000, -80.691304) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-9"></use>
+                        <use stroke="#68A225" mask="url(#mask-10)" stroke-width="2" xlink:href="#path-9"></use>
+                    </g>
+                    <g id="Rectangle-11" transform="translate(103.214877, 123.542868) rotate(79.000000) translate(-103.214877, -123.542868) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-11"></use>
+                        <use stroke="#68A225" mask="url(#mask-12)" stroke-width="2" xlink:href="#path-11"></use>
+                    </g>
+                    <g id="Rectangle-11" transform="translate(34.214877, 123.542868) scale(-1, 1) rotate(79.000000) translate(-34.214877, -123.542868) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-13"></use>
+                        <use stroke="#68A225" mask="url(#mask-14)" stroke-width="2" xlink:href="#path-13"></use>
+                    </g>
+                </g>
+                <g id="square">
+                    <g id="Rectangle-6" transform="translate(113.953870, 113.953870) rotate(-45.000000) translate(-113.953870, -113.953870) ">
+                        <use fill="#68A225" fill-rule="evenodd" xlink:href="#path-15"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-16)" stroke-width="12" xlink:href="#path-15"></use>
+                    </g>
+                    <use id="Rectangle-5" stroke="#68A225" mask="url(#mask-18)" stroke-width="20" xlink:href="#path-17"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
