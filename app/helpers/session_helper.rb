@@ -3,7 +3,7 @@ module SessionHelper
     if user && user.admin
       link_to('Admin', clients_path)
     elsif user
-      account = link_to user.name.split(' ')[0], client_path(user.client)
+      account = link_to user.name.split(' ')[0], user_path(user)
     else
       link_to 'Client Login', login_path
     end

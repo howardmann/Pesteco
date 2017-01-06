@@ -3,7 +3,7 @@
 <p>
   Company:
   <% if @user.client %>
-    <%= link_to @user.client.name, client_path(@user.client) %>
+    <%= @user.client.name %>
   <% end %>
 </p>
 <p>Email: <%= @user.email %></p>

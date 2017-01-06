@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       if user.admin
         redirect_to clients_path
       else
-        redirect_to client_path(user.client)
+        redirect_to user_path(user)
       end
     else
       flash.now[:error] = "Incorrect email or password"
