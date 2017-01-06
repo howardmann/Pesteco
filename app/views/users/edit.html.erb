@@ -12,17 +12,31 @@
       <%= f.text_field :name, :required => true %>
     </p>
     <p>
-      <%= f.label 'Mobile number (optional)' %><br>
+      <%= f.label 'Mobile number' %><br>
       <%= f.text_field :mobile %>
     </p>
-    <p>
-      <%= f.label 'Reset password' %><br>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label 'Confirm password' %><br>
-      <%= f.password_field :password_confirmation %>
-    </p>
+    <% if @current_user.admin || @current_user == @user %>
+      <p>
+        <%= f.label 'Reset password (optional)' %><br>
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label 'Confirm password (optional)' %><br>
+        <%= f.password_field :password_confirmation %>
+      </p>
+    <% end %>
+    <!-- CLIENT_ADMIN can change building authorizations -->
+    <% if @current_user.admin || @current_user.client == @user.client && @current_user.client_admin %>
+      <p>
+        <%= f.label 'Update building access (hold Ctrl key to select multiple)' %><br>
+        <%= f.select :building_ids, @user.client.buildings.order('name ASC').collect {|x| [x.name, x.id]}, {}, :multiple => true, :size => 10 %>
+      </p>
+    <% end %>
+
+    <% if @current_user.admin %>
+      <%= f.label 'Client admin access' %><br>
+      <%= f.select :client_admin, [true, false] %>
+    <% end %>
 
     <p>
       <%= f.submit %>

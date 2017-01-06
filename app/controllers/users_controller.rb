@@ -27,6 +27,13 @@ class UsersController < ApplicationController
 
     @client.users << @user
 
+    # APPEND SELECTED BUILDINGS TO USER
+    # Capture array of building ids selected and reject any blanks
+    building_ids = params[:user][:building_ids].reject{ |id| id.empty? }
+    building_ids.each do |id|
+      @user.buildings << Building.find(id)
+    end
+
     if @user.save
       # Action Mailer to send email upon sign up
       @user.send_password_welcome
@@ -38,12 +45,26 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    user = User.find(params[:id])
+    if @current_user.admin || @current_user == user || user.client == @current_user.client && @current_user.client_admin
+      @user = user
+    else
+      flash[:error] = "You do not have rights to access that user page"
+      redirect_to user_path(@current_user)
+    end
   end
 
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+
+    # CHANGE BUILDING ACCESS
+    building_ids = params[:user][:building_ids].reject{ |id| id.empty? }
+    @user.buildings.destroy_all
+    building_ids.each do |id|
+      @user.buildings << Building.find(id)
+    end
+
     if @user.save
       flash[:success] = 'User successfully updated'
       redirect_to user_path(@user)
@@ -64,7 +85,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :name, :mobile, :password, :password_confirmation, :client_id)
+      params.require(:user).permit(:email, :name, :mobile, :password, :password_confirmation, :client_id, :client_admin)
     end
 
     def require_login

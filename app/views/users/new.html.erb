@@ -16,6 +16,14 @@
       <%= f.text_field :mobile %>
     </p>
     <p>
+      <%= f.label 'Select building access (hold Ctrl key to select multiple)' %><br>
+      <%= f.select :building_ids, @client.buildings.order('name ASC').collect {|x| [x.name, x.id]}, {}, :multiple => true, :size => 10 %>
+    </p>
+    <% if @current_user.admin %>
+      <%= f.label 'Client admin access' %><br>
+      <%= f.select :client_admin, [true, false] %>
+    <% end %>
+    <p>
       <%= f.submit %>
     </p>
   </fieldset>
