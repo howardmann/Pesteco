@@ -9,7 +9,7 @@ class ClientsController < ApplicationController
   def show
     client = Client.find(params[:id])
 
-    if @current_user.admin || @current_user.client == client
+    if @current_user.admin || @current_user.client == client && @current_user.client_admin
       # Only admin and authorized user can see client page
       @client = client
     else

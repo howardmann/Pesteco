@@ -9,6 +9,8 @@ class SessionController < ApplicationController
       flash[:success] = "Succesful login, welcome back"
       if user.admin
         redirect_to clients_path
+      elsif user.client_admin
+        redirect_to client_path(user.client)
       else
         redirect_to user_path(user)
       end

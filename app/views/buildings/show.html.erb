@@ -1,5 +1,11 @@
 <h1><%= @building.name %></h1>
-<p>Owner: <%= link_to @building.client.name, client_path(@building.client) %></p>
+<p>Owner:
+  <% if @current_user.admin || @current_user.client && @current_user.client_admin %>
+    <%= link_to @building.client.name, client_path(@building.client) %>
+  <% else %>
+    <%= link_to @building.client.name, user_path(@current_user) %>
+  <% end %>
+</p>
 <p>Address: <%= @building.address %></p>
 
 <% if @current_user && @current_user.admin %>

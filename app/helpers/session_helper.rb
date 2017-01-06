@@ -2,6 +2,8 @@ module SessionHelper
   def format_session_current_user_nav(user)
     if user && user.admin
       link_to('Admin', clients_path)
+    elsif user && user.client_admin
+      account = link_to user.name.split(' ')[0], client_path(user.client)
     elsif user
       account = link_to user.name.split(' ')[0], user_path(user)
     else

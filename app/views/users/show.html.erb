@@ -2,7 +2,9 @@
 
 <p>
   Company:
-  <% if @user.client %>
+  <% if @user.client && @user.client_admin %>
+    <%= link_to @user.client.name, client_path(@user.client) %>
+  <% else %>
     <%= @user.client.name %>
   <% end %>
 </p>
