@@ -252,6 +252,10 @@ merivale.users << michael
 urban.users << urbantest
 harris.users << sam
 
+urbantest.buildings << urban.buildings
+michael.buildings << merivale.buildings
+sam.buildings << harrisBondi
+
 # Association tests
 puts "\nASSOCIATIONS....."
 puts "Merivale buildings: #{merivale.buildings.all.pluck(:name)}"
@@ -264,7 +268,7 @@ puts "\nHarris buildings: #{harris.buildings.all.pluck(:name)}"
 puts "Harris users: #{harris.users.all.pluck(:name)}"
 
 puts "\nMichael's buildings: #{michael.buildings.all.pluck(:name)}"
-puts "Urban's buildings: #{urbantest.buildings.all.pluck(:name)}"
+puts "Urban test's buildings: #{urbantest.buildings.all.pluck(:name)}"
 puts "Sam's buildings: #{sam.buildings.all.pluck(:name)}"
 
 # POSTS ..........................................

@@ -16,7 +16,8 @@
 class User < ActiveRecord::Base
   has_secure_password
   belongs_to :client
-  has_many :buildings, through: :client
+  # has_many :buildings, through: :client
+  has_and_belongs_to_many :buildings
 
   validates :email, uniqueness: true
 

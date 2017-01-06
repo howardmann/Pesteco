@@ -17,7 +17,21 @@
 <hr>
 
 <h2>Buildings</h2>
-<%= render 'shared/buildings', object: @user %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Reports</th>
+  </tr>
+  <% @user.buildings.order('name ASC').each do |building| %>
+  <tr>
+    <td><%= link_to building.name, building_path(building) %></td>
+    <td><%= building.address %></td>
+    <td><%= building.reports.length %></td>
+  </tr>
+  <% end %>
+</table>
+
 
 <% if @user %>
   <button>
