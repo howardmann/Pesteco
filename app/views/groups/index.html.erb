@@ -1,0 +1,68 @@
+<h1><%= @client.name %></h1>
+<p>Head office: <%= @client.address %></p>
+
+<% if @current_user && @current_user.admin %>
+  <p>
+    <%= link_to 'Edit Client', edit_client_path(@client) %> |
+    <%= link_to 'Delete Client', client_path(@client), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+  </p>
+<% end %>
+
+<hr>
+
+<h2>All groups</h2>
+
+<table>
+  <tr>
+    <th>Group</th>
+    <th>Venues</th>
+    <th>Reports</th>
+    <th>Authorized users</th>
+  </tr>
+<% @client.groups.order('name ASC').each do |group| %>
+  <tr>
+    <td>
+    <%= link_to group.name, client_group_path(@client, group) %>
+
+    </td>
+    <td><%= group.buildings.length %></td>
+    <td><%= group.reports.length %></td>
+    <td>
+      <% group.users.each do |user| %>
+        <%= link_to user.name, user_path(user) %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br>
+
+<%= link_to new_client_group_path do %>
+  <button>Add new group</button>
+<% end %>
+
+<hr>
+
+<h2>Authorized users</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Admin</th>
+    <th>Buildings</th>
+  </tr>
+  <% @client.users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= user.email %></td>
+    <td>
+      <% if user.client_admin%>
+        yes
+      <% else %>
+        no
+      <% end %>
+    </td>
+    <td><%=user.buildings.length%></td>
+  </tr>
+  <% end %>
+</table>

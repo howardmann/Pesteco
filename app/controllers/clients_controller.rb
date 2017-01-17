@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   before_action :require_admin, :except => [:show]
 
   def index
-    @clients = Client.all.order('name ASC');
+    @clients = Client.all.order('name ASC')
   end
 
   def show
