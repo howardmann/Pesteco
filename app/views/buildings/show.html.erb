@@ -7,6 +7,9 @@
   <% end %>
 </p>
 <p>Address: <%= @building.address %></p>
+<% if @building.group %>
+<p>Group: <%= @building.group.name %></p>
+<% end %>
 
 <% if @current_user && @current_user.admin %>
   <p>

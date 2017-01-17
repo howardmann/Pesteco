@@ -10,35 +10,11 @@
 
 <hr>
 
-<h2>Client Admin: All Buildings</h2>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Reports</th>
-    <th>User access</th>
-  </tr>
-  <% @client.buildings.order('name ASC').each do |building| %>
-  <tr>
-    <td><%= link_to building.name, building_path(building) %></td>
-    <td><%= building.address %></td>
-    <td><%= building.reports.length %></td>
-    <td>
-      <% building.users.each do |user| %>
-        <%= user.name.split(' ')[0] %>,
-      <% end %>
-    </td>
-  </tr>
-  <% end %>
-</table>
-
-<br>
-
-<% if @current_user && @current_user.admin %>
-  <%= link_to new_client_building_path(@client) do %>
-    <button>Add new building</button>
-  <% end %>
+<% if @client.groups.length == 0 || @current_user.admin %>
+  <%= render "shared/buildings", object: @client %>
+<% end %>
+<% if @client.groups.length > 0 || @current_user.admin %>
+  <%= render "shared/groups" %>
 <% end %>
 
 <hr>

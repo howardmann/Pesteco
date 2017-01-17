@@ -1,0 +1,32 @@
+<h2>Client Admin: All Buildings</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Reports</th>
+    <th>Latest</th>
+    <th>User access</th>
+  </tr>
+  <% object.buildings.order('name ASC').each do |building| %>
+  <tr>
+    <td><%= link_to truncate(building.name, length: 30), building_path(building) %></td>
+    <td><%= truncate(building.address, length: 30) %></td>
+    <td><%= building.reports.length %></td>
+    <td><%= building.reports.pluck('date').max.strftime('%d-%b-%y') if building.reports.length > 0%></td>
+    <td>
+      <% building.users.each do |user| %>
+        (<%= user.name.split(' ')[0] %>)
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<br>
+
+<% if @current_user && @current_user.admin %>
+  <%= link_to new_client_building_path(@client) do %>
+    <button>Add new building</button>
+  <% end %>
+<% end %>

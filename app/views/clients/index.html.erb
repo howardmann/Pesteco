@@ -2,26 +2,42 @@
 
 <table>
   <tr>
-    <th>Client</th>
+    <th>Pesteco clients</th>
     <th>Venues</th>
     <th>Reports</th>
+    <th>Latest</th>
+    <th>Groups</th>
     <th>Users</th>
   </tr>
-<% @clients.each do |client| %>
+  <tr class="client-summary">
+    <th><%= @clients.length %></th>
+    <th><%= @clients.map {|client| client.buildings.length}.reduce(:+) %></th>
+    <th><%= @clients.map {|client| client.reports.length}.reduce(:+) %></th>
+    <th></th>
+    <th><%= @clients.map {|client| client.groups.length}.reduce(:+) %></th>
+    <th><%= @clients.map {|client| client.users.length}.reduce(:+) %></th>
+  </tr>
+
+  <% @clients.each do |client| %>
   <tr>
-    <td><%= link_to client.name, client_path(client) %></td>
+    <td><%= link_to truncate(client.name, length: 30), client_path(client) %></td>
     <td><%= client.buildings.length %></td>
     <td><%= client.reports.length %></td>
+    <td><%= client.reports.pluck('date').max.strftime('%d-%b-%y') if client.reports.length > 0%></td>
+    <td><%= client.groups.length %></td>
     <td>
       <% client.users.each do |user| %>
-        <%= link_to user.name, user_path(user) %>
+      (<%= link_to user.name.split(' ')[0], user_path(user) %>)
       <% end %>
+
     </td>
   </tr>
-<% end %>
+  <% end %>
+
+
 </table>
 <br>
 
 <%= link_to new_client_path do %>
-  <button>Add new client</button>
+<button>Add new client</button>
 <% end %>

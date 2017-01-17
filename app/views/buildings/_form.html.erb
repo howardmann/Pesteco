@@ -10,6 +10,10 @@
       <%= f.text_field :address, size: 60, :required => true %>
     </p>
     <p>
+      <%= f.label 'Group (leave blank if none)' %><br>
+      <%= f.select :group_id, @building.client.groups.order('name ASC').collect {|group| [group.name, group.id]}, {include_blank: true} %>
+    </p>
+    <p>
       <%= f.submit %>
     </p>
   </fieldset>

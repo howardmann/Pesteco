@@ -1,0 +1,34 @@
+<h2>Client Admin: All Groups</h2>
+
+<table>
+  <tr>
+    <th>Group</th>
+    <th>Venues</th>
+    <th>Reports</th>
+    <th>Latest</th>
+    <th>User access</th>
+  </tr>
+<% @client.groups.order('name ASC').each do |group| %>
+  <tr>
+    <td>
+    <%= link_to group.name, client_group_path(@client, group) %>
+
+    </td>
+    <td><%= group.buildings.length %></td>
+    <td><%= group.reports.length %></td>
+    <td><%= group.reports.pluck('date').max.strftime('%d-%b-%y') if group.reports.length > 0%></td>
+    <td>
+      <% group.users.uniq{|x| x.id }.each do |user| %>
+        (<%= user.name.split(' ')[0] %>)
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br>
+
+<% if @current_user && @current_user.admin %>
+  <%= link_to new_client_group_path(@client) do %>
+    <button>Add new group</button>
+  <% end %>
+<% end %>

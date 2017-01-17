@@ -55,7 +55,7 @@ class BuildingsController < ApplicationController
 
   private
     def building_params
-      params.require(:building).permit(:name, :address, :reports, :client_id)
+      params.require(:building).permit(:name, :address, :reports, :client_id, :group_id)
     end
 
     def require_login

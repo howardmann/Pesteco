@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :require_login
-  before_action :require_admin
+  before_action :require_admin, :except => [:index, :show]
 
   def index
     @client = Client.find(params[:client_id])
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     @client.groups << @group
     if @group.save
       flash[:success] = "Group succesfully created"
-      redirect_to client_groups_path(@client)
+      redirect_to client_path(@client)
     else
       render :new
     end
@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
     @group.update(group_params)
     if @group.save
       flash[:success] = "Group succesfully updated"
-      redirect_to client_groups_path(@client)
+      redirect_to client_path(@client)
     else
       render :edit
     end
