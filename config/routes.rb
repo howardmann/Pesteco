@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :clients do
     resources :buildings, only: [:new, :create]
     resources :users, only: [:new, :create]
+    resources :groups, only: [:new, :create]
   end
 
   resources :users, only: [:index, :show, :edit, :update, :destroy]
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
   end
 
   resources :reports, only: [:show, :edit, :update, :destroy]
+
+  resources :groups, only: [:edit, :update, :destroy]
 
   resources :posts
 
