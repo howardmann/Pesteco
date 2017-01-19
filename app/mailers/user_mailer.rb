@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-  # default from: "info@pesteco.com.au"
-  default from: "donotreply@pesteco.com.au"
+  default from: "info@pesteco.com.au"
+  # default from: "donotreply@pesteco.com.au"
 
   def welcome(user)
     @user = user
