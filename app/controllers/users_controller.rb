@@ -59,10 +59,12 @@ class UsersController < ApplicationController
     @user.update(user_params)
 
     # CHANGE BUILDING ACCESS
-    building_ids = params[:user][:building_ids].reject{ |id| id.empty? }
-    @user.buildings.destroy_all
-    building_ids.each do |id|
-      @user.buildings << Building.find(id)
+    if @current_user.admin || @current_user.client_admin
+      building_ids = params[:user][:building_ids].reject{ |id| id.empty? }
+      @user.buildings.destroy_all
+      building_ids.each do |id|
+        @user.buildings << Building.find(id)
+      end
     end
 
     if @user.save
