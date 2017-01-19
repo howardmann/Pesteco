@@ -9,10 +9,16 @@
       <%= f.label :address %><br>
       <%= f.text_field :address, size: 60, :required => true %>
     </p>
+
     <p>
       <%= f.label 'Group (leave blank if none)' %><br>
+      <% if @client %>
+      <%= f.select :group_id, @client.groups.order('name ASC').collect {|group| [group.name, group.id]}, {include_blank: true} %>
+      <% else %>
       <%= f.select :group_id, @building.client.groups.order('name ASC').collect {|group| [group.name, group.id]}, {include_blank: true} %>
+      <% end %>
     </p>
+
     <p>
       <%= f.submit %>
     </p>
