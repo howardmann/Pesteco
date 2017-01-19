@@ -35,7 +35,7 @@
 
     <% if @current_user.admin %>
       <%= f.label 'Client admin access' %><br>
-      <%= f.select :client_admin, [true, false] %>
+      <%= select_tag :client_admin, options_for_select([true, false]) %>
     <% end %>
 
     <p>
