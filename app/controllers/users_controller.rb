@@ -57,7 +57,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    binding.pry
     # CHANGE BUILDING ACCESS
     if @current_user.admin || @current_user.client_admin
       building_ids = params[:user][:building_ids].reject{ |id| id.empty? }
