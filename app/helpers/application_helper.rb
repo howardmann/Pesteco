@@ -7,4 +7,7 @@ module ApplicationHelper
     end
   end
 
+  def yield_meta_tag(default_text='')
+    content_for?(:"meta_description") ? content_for(:"meta_description") : default_text
+  end
 end

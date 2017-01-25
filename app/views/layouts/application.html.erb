@@ -6,7 +6,7 @@
         <%= yield(:title) %>
       <% else %>
         Pesteco | Pest Control Experts | Environmentally Safe | Sydney NSW Australia
-      <% end %>      
+      <% end %>
     </title>
     <%= stylesheet_link_tag    'application',
     'https://fonts.googleapis.com/css?family=Roboto:400,700',
@@ -18,7 +18,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Pesteco is Australia’s most highly certified pest management company - We deliver full-service expertise across retail, hospitality, commercial and residential property sectors. We guarantee a higher quality standard, an environmentally sustainable solution and the safest possible work environment for our client and our employees. Email us at info@pesteco.com.au or call us on 0411 268 868" />
+    <meta name="description" content='<%=yield_meta_tag('Welcome to Pesteco, we deliver full-service expertise across retail, hospitality, commercial and residential property sectors. We guarantee a higher quality standard, an environmentally sustainable solution and the safest possible work environment for our client and our employees. Our expertise includes: termite specialists (fully certified termite detection, prevention and treatment), insect control (flying and crawling insect control and treatment solutions) and bird & rodent control (effective programs for rat, mice, possum and bird infestations). Contact us at info@pesteco.com.au or call us on 0411 268 868') %>' />
     <meta name="keywords" content="Pest Management, Eastern Suburbs Pest Management, pest control, bogdan kolev, pest extermination, cockroach control, termite control, termites extermination, maroubra pest control">
     <%= favicon_link_tag 'pesteco_favicon.png', type: 'image/png' %>
     <%= favicon_link_tag 'pesteco_favicon.png', rel: 'apple-touch-icon', type: 'image/png' %>
