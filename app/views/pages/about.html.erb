@@ -6,24 +6,16 @@
 
 <div class="row">
   <div class="col col-6 offset-3 sm-col-12 center">
-    <p class="subheading">Pesteco is Australia’s <strong>most certified pest management company</strong> - We deliver full-service expertise across retail, hospitality, commercial and residential sectors.</p>
+    <p class="subheading">Pesteco is Australia’s <strong>most certified pest management company</strong> - We deliver full-service pest control across retail, hospitality, commercial and residential sectors.</p>
   </div>
 </div>
 
 <div class="row">
   <div class="col col-4 sm-col-12">
     <div class="col col-3 center">
-      <%= image_tag('termite_logo.svg', :class => 'pest-solution') %>
-    </div>
-    <div class="col col-9">
-      <p class="solution-heading">Termite Specialists</p>
-      <p class="solution-text">Fully certified termite detection, prevention and treatment.</p>
-    </div>
-  </div>
-
-  <div class="col col-4 sm-col-12">
-    <div class="col col-3 center">
-      <%= image_tag('insect_logo.svg', :class => 'pest-solution') %>
+      <%= link_to insects_path do %>
+        <%= image_tag('insect_logo.svg', :class => 'pest-solution') %>
+      <% end %>
     </div>
     <div class="col col-9">
       <p class="solution-heading">Insect Control</p>
@@ -33,13 +25,27 @@
 
   <div class="col col-4 sm-col-12">
     <div class="col col-3 center">
-      <%= image_tag('rodent_logo.svg', :class => 'pest-solution') %>
+      <%= link_to rodents_path do %>
+        <%= image_tag('rodent_logo.svg', :class => 'pest-solution') %>
+      <% end %>
     </div>
     <div class="col col-9">
-      <p class="solution-heading">Bird & Rodent Control</p>
+      <p class="solution-heading">Rodent & Bird Control</p>
       <p class="solution-text">Effective programs for rat, mice, possum and bird infestations.</p>
     </div>
   </div>
+
+  <div class="col col-4 sm-col-12">
+    <div class="col col-3 center">
+      <%= link_to termites_path do %>
+        <%= image_tag('termite_logo.svg', :class => 'pest-solution') %>
+      <% end %>
+    </div>
+    <div class="col col-9">
+      <p class="solution-heading">Termites Specialists</p>
+      <p class="solution-text">Fully certified termites detection, prevention and treatment.</p>
+    </div>
+  </div>  
 </div>
 
 
@@ -77,12 +83,12 @@
 
 
 <div class="row row-shade">
-<div class="col-12 center">
-  <div class="call-out">
-    <h2>Contact us</h2>
-    <h3>0411 268 868</h3>
+  <div class="col-12 center">
+    <div class="call-out">
+      <h2>Contact us</h2>
+      <h3>0411 268 868</h3>
 
-    <h3><a href="mailto:info@pesteco.com.au">Email us</a></h3>
+      <h3><a href="mailto:info@pesteco.com.au">Email us</a></h3>
+    </div>
   </div>
-</div>
 </div>

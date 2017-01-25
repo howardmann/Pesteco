@@ -5,6 +5,15 @@ class PagesController < ApplicationController
   def services
   end
 
+  def termites
+  end
+
+  def insects
+  end
+
+  def rodents
+  end
+
   def contact
   end
 
