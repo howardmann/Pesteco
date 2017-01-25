@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pesteco | Pest Control Experts | Environmentally Safe | Sydney NSW Australia </title>
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Pesteco | Pest Control Experts | Environmentally Safe | Sydney NSW Australia
+      <% end %>      
+    </title>
     <%= stylesheet_link_tag    'application',
     'https://fonts.googleapis.com/css?family=Roboto:400,700',
     media: 'all', 'data-turbolinks-track' => true %>
