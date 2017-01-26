@@ -1,6 +1,9 @@
 http://dashboard.pesteco.com.au/
 http://dashboard.pesteco.com.au/about
 http://dashboard.pesteco.com.au/services
+http://dashboard.pesteco.com.au/insects
+http://dashboard.pesteco.com.au/rodents
+http://dashboard.pesteco.com.au/termites
 http://dashboard.pesteco.com.au/contact
 http://dashboard.pesteco.com.au/certification
 http://dashboard.pesteco.com.au/insurance
