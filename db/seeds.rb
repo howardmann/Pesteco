@@ -240,7 +240,6 @@ p "Reports count: #{Report.all.length}"
 p "Coogee building reports: #{coogee.reports.pluck(:date)}"
 p "Wong building reports: #{wong.reports.pluck(:date)}"
 
-
 # ASSOCIATIONS
 merivale.buildings << coogee << wong << newport
 
@@ -344,3 +343,31 @@ puts "Post title: #{Post.all.pluck(:title)}"
 puts "Post insurance count: #{Post.all.select{|post| post.category == 'Insurance'}.length}"
 puts "Post certification count: #{Post.all.select{|post| post.category == 'Certification'}.length}"
 # puts "Post news count: #{Post.all.select{|post| post.category == 'News'}.length}"
+
+# INCIDENTS ..........................................
+Incident.destroy_all
+coogeeIncident1 = Incident.create(
+  :date_report => '20170215',
+  :description => 'Huge cockroach',
+  :date_respond => '20170220',
+  :response => 'Sprayed with mortein',
+  :technician => 'Bogdan'
+)
+
+coogeeIncident2 = Incident.create(
+  :date_report => '20170115',
+  :description => 'Flies everywhere',
+  :date_respond => '20170220',
+  :response => 'Fly traps set',
+  :technician => 'Fadey'
+)
+
+coogee.incidents << coogeeIncident1 << coogeeIncident2
+michael.incidents << coogeeIncident1 << coogeeIncident2
+
+# Incidents tests
+puts "\nINCIDENTS........"
+p "Incidents count: #{Incident.all.length}"
+p "Coggee technicians: #{coogee.incidents.pluck(:technician)}"
+p "Coogee incidents: #{coogee.incidents.pluck(:description)}"
+p "Michael incidents: #{michael.incidents.pluck(:description)}"
