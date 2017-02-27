@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :buildings, only: [:show, :edit, :update, :destroy] do
     resources :reports, only: [:new, :create]
+    resources :incidents
   end
 
   resources :reports, only: [:show, :edit, :update, :destroy]

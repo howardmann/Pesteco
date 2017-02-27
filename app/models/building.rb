@@ -18,4 +18,15 @@ class Building < ActiveRecord::Base
   belongs_to :group
   has_many :incidents
 
+  def incidentsDone
+    self.incidents.order('date_report DESC').select do |el|
+      el.date_respond
+    end
+  end
+
+  def incidentsTodo
+    self.incidents.order('date_report DESC').select do |el|
+      !el.date_respond
+    end
+  end
 end

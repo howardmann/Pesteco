@@ -18,7 +18,6 @@
   </p>
 <% end %>
 
-<hr>
 
 <h2>Reports</h2>
 
@@ -34,15 +33,55 @@
       | <%= link_to 'Delete', report_path(:id => report, :building_id => @building), method: :delete, :data => {confirm: 'Are you sure?'} %>
     <% end %>
   </p>
-
 <% end %>
-
-
-
-<br>
 
 <% if @current_user && @current_user.admin %>
   <%= link_to new_building_report_path(@building) do %>
     <button>Add new report</button>
   <% end %>
 <% end %>
+
+<hr>
+
+<h2>Pest sightings</h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>User</th>
+  </tr>
+  <% @building.incidentsTodo.each do |incident| %>
+  <tr>
+    <td><%= link_to incident.date_report.strftime('%d %b'), building_incident_path(@building, incident) %></td>
+    <td><%= truncate(incident.description) %></td>
+    <td><%= incident.user.name %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to new_building_incident_path(@building) do %>
+  <button>New pest sighting</button>
+<% end %>
+
+<br>
+
+<h2>Actioned incidents</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Action</th>
+    <th>Technician</th>
+  </tr>
+  <% @building.incidentsDone.each do |incident| %>
+  <tr>
+    <td><%= link_to incident.date_report.strftime('%d %b'), building_incident_path(@building, incident) %></td>
+    <td><%= truncate(incident.description) %></td>
+    <td><%= truncate(incident.response) %></td>
+    <td><%= incident.technician %></td>
+  </tr>
+  <% end %>
+</table>
+
+<br>

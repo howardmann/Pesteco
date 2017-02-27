@@ -1,0 +1,26 @@
+<h1>Pest sighting</h1>
+<% if @current_user || @current_user.admin %>
+  <p>
+    <%= link_to 'Edit incident', edit_building_incident_path(@building, @incident) %> |
+    <%= link_to 'Delete incident', building_incident_path(@building, @incident), :method => :delete, :data => {confirm: 'Are you sure?'} %>
+  </p>
+<% end %>
+
+<h3><%= @incident.building.name %> notification</h3>
+<p><strong>Client:</strong> <%= @incident.building.client.name %></p>
+<p><strong>Date sighted:</strong> <%= @incident.date_report.strftime('%a, %d %b %Y') %></p>
+<p><strong>Reported by:</strong> <%= @incident.user.name %></p>
+<p><strong>Description:</strong> <%= @incident.description %></p>
+
+<h3>Pesteco technician response</h3>
+<p><strong>Date responded:</strong>
+  <% if @incident.date_respond %>
+    <%= @incident.date_respond.strftime('%a, %d %b %Y') %>
+  <% else %>
+    Awaiting response
+  <% end %>
+</p>
+<p><strong>Response:</strong> <%= @incident.response %></p>
+<p><strong>Technician:</strong> <%= @incident.technician %></p>
+
+<br>

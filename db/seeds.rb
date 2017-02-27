@@ -362,8 +362,18 @@ coogeeIncident2 = Incident.create(
   :technician => 'Fadey'
 )
 
-coogee.incidents << coogeeIncident1 << coogeeIncident2
-michael.incidents << coogeeIncident1 << coogeeIncident2
+coogeeIncident3 = Incident.create(
+  :date_report => '20170215',
+  :description => 'Rats all over the kitchen urgent',
+)
+
+coogeeIncident4 = Incident.create(
+  :date_report => '20170225',
+  :description => 'Larg flying cokcroaches',
+)
+
+coogee.incidents << coogeeIncident1 << coogeeIncident2 << coogeeIncident3 << coogeeIncident4
+michael.incidents << coogeeIncident1 << coogeeIncident2 << coogeeIncident3 << coogeeIncident4
 
 # Incidents tests
 puts "\nINCIDENTS........"
