@@ -12,6 +12,8 @@ class IncidentsController < ApplicationController
     @building.incidents << @incident
     @current_user.incidents << @incident
     if @incident.save
+      # Action Mailer to send email upon pest sighting
+      @incident.send_incident_sighting
       flash[:success] = "Incident succesfully added"
       redirect_to building_path(@building)
     else

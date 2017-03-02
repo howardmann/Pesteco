@@ -1,0 +1,11 @@
+Pesteco pest sighting alert
+
+<%= @incident.building.name %> notification
+
+Client: <%= @incident.building.client.name %>
+
+Date sighted: <%= @incident.date_report.strftime('%a, %d %b %Y') %>
+
+Reported by: <%= @incident.user.name %>
+
+Description: <%= @incident.description %>

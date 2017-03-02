@@ -1,0 +1,7 @@
+<h2>Pesteco pest sighting alert</h2>
+
+<h3><%= @incident.building.name %> notification</h3>
+<p><strong>Client:</strong> <%= @incident.building.client.name %></p>
+<p><strong>Date sighted:</strong> <%= @incident.date_report.strftime('%a, %d %b %Y') %></p>
+<p><strong>Reported by:</strong> <%= @incident.user.name %></p>
+<p><strong>Description:</strong> <%= @incident.description %></p>
