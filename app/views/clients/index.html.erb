@@ -8,7 +8,7 @@
     <th>Venues</th>
     <th>Reports</th>
     <th>Latest</th>
-    <th>Groups</th>
+    <th>Incidents</th>
     <th>Users</th>
   </tr>
   <tr class="client-summary">
@@ -16,7 +16,7 @@
     <th><%= @clients.map {|client| client.buildings.length}.reduce(:+) %></th>
     <th><%= @clients.map {|client| client.reports.length}.reduce(:+) %></th>
     <th></th>
-    <th><%= @clients.map {|client| client.groups.length}.reduce(:+) %></th>
+    <th><%= @clients.map {|client| client.incidents.length}.reduce(:+) %></th>
     <th><%= @clients.map {|client| client.users.length}.reduce(:+) %></th>
   </tr>
 
@@ -26,7 +26,7 @@
     <td><%= client.buildings.length %></td>
     <td><%= client.reports.length %></td>
     <td><%= client.reports.pluck('date').max.strftime('%d-%b-%y') if client.reports.length > 0%></td>
-    <td><%= client.groups.length %></td>
+    <td><%= client.incidents.length %></td>
     <td>
       <% client.users.each do |user| %>
       (<%= link_to user.name.split(' ')[0], user_path(user) %>)

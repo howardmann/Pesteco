@@ -14,4 +14,5 @@ class Client < ActiveRecord::Base
   has_many :buildings
   has_many :reports, through: :buildings
   has_many :groups
+  has_many :incidents, through: :users
 end

@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Address</th>
+    <th>Incidents</th>
     <th>Reports</th>
     <th>Latest</th>
     <th>User access</th>
@@ -12,6 +13,7 @@
   <tr>
     <td><%= link_to truncate(building.name, length: 30), building_path(building) %></td>
     <td><%= truncate(building.address, length: 30) %></td>
+    <td><%= building.incidents.length %></td>        
     <td><%= building.reports.length %></td>
     <td><%= building.reports.pluck('date').max.strftime('%d-%b-%y') if building.reports.length > 0%></td>
     <td>
