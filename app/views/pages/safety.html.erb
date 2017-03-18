@@ -1,0 +1,16 @@
+<% content_for :title, 'Material Safety Data Sheets | Pesteco Pest Control' %>
+<% content_for :meta_description, 'Pesteco is the most certified Pest control company in Australia, across all commercial, residential and hospitality sectors.' %>
+
+<h1>Pesteco Material Safety Data Sheets</h1>
+<p>Please view Pesteco's material safety data sheets below:</p>
+<ul>
+  <% @posts_safety.each do |post| %>
+  <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>
+
+<% if @current_user && @current_user.admin %>
+<button>
+  <%= link_to 'Add new safety sheet', new_post_path %>
+</button>
+<% end %>

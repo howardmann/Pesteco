@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'certification' => 'pages#certification', :as => 'certification'
   get 'insurance' => 'pages#insurance', :as => 'insurance'
   get 'news' => 'pages#news', :as => 'news'
+  get 'safety' => 'pages#safety', :as => 'safety'
   get 'termites' => 'pages#termites', :as => 'termites'
   get 'insects' => 'pages#insects', :as => 'insects'
   get 'rodents' => 'pages#rodents', :as => 'rodents'
