@@ -12,74 +12,24 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col col-4 sm-col-12">
-    <div class="col col-3 center">
-      <%= link_to insects_path do %>
-        <%= image_tag('insect_logo.svg', :class => 'pest-solution') %>
-      <% end %>
-    </div>
-    <div class="col col-9">
-      <p class="solution-heading"><%= link_to 'Insect Control', insects_path %></p>
-      <p class="solution-text">Flying and crawling insect control and treatment solutions.</p>
-    </div>
-  </div>
-
-  <div class="col col-4 sm-col-12">
-    <div class="col col-3 center">
-      <%= link_to rodents_path do %>
-        <%= image_tag('rodent_logo.svg', :class => 'pest-solution') %>
-      <% end %>
-    </div>
-    <div class="col col-9">
-      <p class="solution-heading"><%= link_to 'Rodent & Bird Control', rodents_path %></p>
-      <p class="solution-text">Effective programs for rat, mice, possum and bird infestations.</p>
-    </div>
-  </div>
-
-  <div class="col col-4 sm-col-12">
-    <div class="col col-3 center">
-      <%= link_to termites_path do %>
-        <%= image_tag('termite_logo.svg', :class => 'pest-solution') %>
-      <% end %>
-    </div>
-    <div class="col col-9">
-      <p class="solution-heading"><%= link_to 'Termites Specialists', termites_path %></p>
-      <p class="solution-text">Fully certified termites detection, prevention and treatment.</p>
-    </div>
-  </div>
-</div>
-
 
 <div class="row">
   <div class="col sm-col-12 col-6 center">
     <h3>About us</h3>
     <p class="left">Find out more information about our fully-certified and environmentally safe pest management solutions</p>
-    <%= link_to services_path do %>
+    <a href="http://www.pesteco.com.au">
       <button class="find-out">Find out more</button>
-    <% end %>
+    </a>
 
   </div>
 
   <div class="col sm-col-12 col-6 center">
-    <h3>Pesteco clients</h3>
+    <h3>Client login</h3>
     <p class="left">Existing Pesteco clients can access their reports by logging in to the Pesteco Dashboard service
     </p>
-
     <%= link_to login_path do %>
       <button>Client dashboard login</button>
     <% end %>
-  </div>
-</div>
-
-
-<div class="row row-shade client">
-  <div class="col col-12 center">
-    <h3 class='client-heading'>The trusted pest control expert across Australia’s leading properties</h3>
-    <div class="col col-12">
-      <%= image_tag('client_logos.png', :class => 'client-logos') %>
-    </div>
-
   </div>
 </div>
 
