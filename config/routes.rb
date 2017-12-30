@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact', :as => 'contact'
   get 'certification' => 'pages#certification', :as => 'certification'
   get 'insurance' => 'pages#insurance', :as => 'insurance'
+  get 'license' => 'pages#license', :as => 'license'
   get 'news' => 'pages#news', :as => 'news'
   get 'safety' => 'pages#safety', :as => 'safety'
   get 'termites' => 'pages#termites', :as => 'termites'

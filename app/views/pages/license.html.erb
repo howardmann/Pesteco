@@ -1,0 +1,16 @@
+<% content_for :title, 'Licenses | Pesteco Pest Control' %>
+<% content_for :meta_description, 'Overview of Pesteco insurance information and supporting documentation' %>
+
+<h1>Pesteco Licenses</h1>
+<p>Overview of Pesteco licenses</p>
+<ul>
+  <% @posts_license.each do |post| %>
+  <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>
+
+<% if @current_user && @current_user.admin %>
+<button>
+  <%= link_to 'Add new license', new_post_path %>
+</button>
+<% end %>

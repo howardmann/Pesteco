@@ -336,12 +336,22 @@ certificationFood = Post.create(
 #   :attachments => ['Pesteco/urban']
 # )
 
+licenceA = Post.create(
+  :title => 'Staff Pest Control License - Bogdan Kolev',
+  :date => '20161230',
+  :body => 'Staff Pest Control License - Bogdan Kolev',
+  :category => 'License',
+  :attachments => ['hzn6qxi28k7im2j5qkoj']
+)
+
+
 # Post test
 puts "\nPOSTS......."
 puts "Posts count: #{Post.all.length}"
 puts "Post title: #{Post.all.pluck(:title)}"
 puts "Post insurance count: #{Post.all.select{|post| post.category == 'Insurance'}.length}"
 puts "Post certification count: #{Post.all.select{|post| post.category == 'Certification'}.length}"
+# puts "Post licence count: #{Post.all.select{|post| post.category == 'Licence'}.length}"
 # puts "Post news count: #{Post.all.select{|post| post.category == 'News'}.length}"
 
 # INCIDENTS ..........................................
