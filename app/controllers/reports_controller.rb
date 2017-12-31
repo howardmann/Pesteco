@@ -69,7 +69,7 @@ class ReportsController < ApplicationController
 
   private
     def report_params
-      params.require(:report).permit(:date, :pdf, :building_id)
+      params.require(:report).permit(:date, :pdf, :building_id, :title, :category)
     end
 
     def require_admin

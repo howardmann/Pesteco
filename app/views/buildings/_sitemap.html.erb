@@ -1,0 +1,17 @@
+<% if @building.reports.pluck('category').include? 'sitemap' %>
+  <h2>Sitemap</h2>
+  <% @building.reports.order('date DESC').select{|report| report.category == 'sitemap'}.each do |report|  %>
+    <p>
+      <strong><%= report.title %>:</strong>
+      <%= link_to 'Open', cl_image_path(report.pdf), :target => '_blank' %> |
+      <%= link_to 'Save', cl_image_path(report.pdf, :flags => :attachment) %> |
+      <%= format_email_report(report) %>
+
+      <% if @current_user && @current_user.admin %>
+        | <%= link_to 'Edit', edit_report_path(:id => report, :building_id => @building) %>
+        | <%= link_to 'Delete', report_path(:id => report, :building_id => @building), method: :delete, :data => {confirm: 'Are you sure?'} %>
+      <% end %>
+    </p>
+  <% end %>
+  <hr>
+<% end %>

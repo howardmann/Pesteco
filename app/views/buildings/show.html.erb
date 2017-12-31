@@ -20,8 +20,7 @@
 
 
 <h2>Reports</h2>
-
-<% @building.reports.order('date DESC').each do |report|  %>
+<% @building.reports.order('date DESC').select{|report| report.category == nil || report.category == 'report'}.each do |report|  %>
   <p>
     <strong><%= report.date.strftime('%a, %d %b %Y') %>:</strong>
     <%= link_to 'Open', cl_image_path(report.pdf), :target => '_blank' %> |
@@ -42,6 +41,8 @@
 <% end %>
 
 <hr>
+
+<%= render :partial => 'sitemap' %>
 
 <h2>Pest sightings</h2>
 

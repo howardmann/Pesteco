@@ -11,6 +11,12 @@
 #
 
 class Report < ActiveRecord::Base
+  CATEGORY = ['report', 'sitemap']
+  validates :category, inclusion: {
+    in: CATEGORY,
+    message: 'Must be relevant category'
+  }
+  
   belongs_to :building
   validates :pdf, presence: true
   validates :date, presence: true

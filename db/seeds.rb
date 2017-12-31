@@ -234,6 +234,16 @@ wongReport2 = Report.create(
 coogee.reports << coogeeReport1 << coogeeReport2
 wong.reports << wongReport1 << wongReport2
 
+# Report sitemap category test
+wongReportMap1 = Report.create(
+  :date => '20171212',
+  :pdf => 'sitemap_bavarian_world_square_ezjtph',
+  :category => 'sitemap',
+  :title => 'Mr wong sitemap'
+)
+
+wong.reports << wongReportMap1
+
 # Reports tests
 puts "\nREPORTS........"
 p "Reports count: #{Report.all.length}"
